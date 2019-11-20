@@ -2,20 +2,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Introduction(); // just testing some stuff
+        Introduction();
 }
 
-    public String wrapStars(String message) {
+    public static String wrapStars(String message) {
         String ret = "";
-        for(int i = 1 ; i < 4 ; i++)
-        {
-            for(int j = 0 ; j < message.length() + 3 ; j++)
-            {
-                if(i%2 == 1)
-                    ret += "*";
-            }
+
+        for(int i = 0 ; i < message.length() + 2 ; i++) {
+            ret += "*";
         }
 
+        ret += "\n" + "*" + message + "*" + "\n";
+        for(int i = 0 ; i < message.length() + 2 ; i++) {
+            ret += "*";
+        }
+        return ret;
     }
 
     public static void Introduction() {
@@ -24,8 +25,13 @@ public class Main {
 
         Player p = new Player(scan.nextLine());
 
-        System.out.println("You control the United Nations. The year is 1970, and scientists have begun to realize \n" +
-                "there is a possibility human atmospheric pollution has damaged the natural ecosystem."); // i think i figured it out
+        System.out.println(wrapStars("Welcome, " + p.getName()));
+
+        System.out.println(p.getName() + ", you are now the leader of an island named Triton in the middle of the Pacific. Your goal is to lead your island nation" + "\n"
+                + "to prosperity for the next 50 years. Your success will be measured by four main categories: ");
+
+        System.out.println("\n -Gross Domestic Product (in millions of US Dollars \n -Food Availability (in millions of tons of food) \n " +
+                "-Energy (in megawatt hours) \n -Carbon Dioxide Emissions(in millions of tons)");
     }
 
     public static void LevelOne() {
@@ -41,10 +47,11 @@ public class Player {
     private String name;
     private int level;
 
+
+
     public Player(String name) {
         level = 0;
         this.name = name;
-        System.out.println("Hello " + name + " ");
     }
 
     public String getName() {
