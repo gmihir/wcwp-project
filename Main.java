@@ -37,6 +37,8 @@ public class Main {
         System.out.println("This simulation activity will present you with realistic, practical challenges a leader will face over decades of rule. You must take " + "\n"
         + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. Each challenge you face will" + "\n"
         + "include a prediction of how your energy, money, CO2 emissions, and food availability will be affected. ");
+
+        System.out.println("\n Your entire goal in this activity is to keep ");
     }
 
     public static void LevelOne() {
