@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static void Introduction() {
-        System.out.println("Please enter your name.");
+        System.out.println("Please enter your name:");
         Scanner scan = new Scanner(System.in);
 
         Player p = new Player(scan.nextLine());
