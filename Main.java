@@ -38,11 +38,19 @@ public class Main {
         + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. Each challenge you face will" + "\n"
         + "include a prediction of how your energy, money, CO2 emissions, and food availability will be affected. ");
 
-        System.out.println("\n Your entire goal in this activity is to keep ");
+        System.out.println("\nYour entire goal in this activity is to keep the global warming of Triton under 1.5 degrees C. Unfortunately, you have just found out" +"\n"
+        + "global warming is an issue. The island has already warmed 0.1 C since the Industrial Revolution.");
+
+        System.out.println("\nGood Luck!");
+
+        System.out.println("\nPlease enter any key below to enter the simulation.");
+
+        scan.nextLine();
+        LevelOne();
     }
 
     public static void LevelOne() {
-
+        System.out.println(wrapStars("LEVEL ONE - 1960"));
 
     }
 
@@ -52,7 +60,7 @@ public class Main {
 public class Player {
 
     private String name;
-    private int level, money, energy, food, co2;
+    private int level, money, energy, food, co2, temp;
 
 
 
@@ -82,6 +90,10 @@ public class Player {
 
     public int getCo2() {
         return co2;
+    }
+
+    public int getTemp() {
+        return temp;
     }
 
 }
