@@ -47,7 +47,7 @@ public class Main {
 
 }
 
-public class Player {
+class Player {
 
     private String name;
     private int level, money, energy, food, co2;
