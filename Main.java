@@ -20,6 +20,21 @@ public class Main {
         return ret;
     }
 
+
+    public static String wrapBars(String message) {
+        String ret = "";
+
+        for(int i = 0 ; i < message.length() + 2 ; i++) {
+            ret += "-";
+        }
+
+        ret += "\n" + "|" + message + "|" + "\n";
+        for(int i = 0 ; i < message.length() + 2 ; i++) {
+            ret += "-";
+        }
+        return ret;
+    }
+
     public static void Introduction() {
         System.out.println("Please enter your name:");
         Scanner scan = new Scanner(System.in);
@@ -37,10 +52,20 @@ public class Main {
         System.out.println("This simulation activity will present you with realistic, practical challenges a leader will face over decades of rule. You must take " + "\n"
         + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. Each challenge you face will" + "\n"
         + "include a prediction of how your energy, money, CO2 emissions, and food availability will be affected. ");
+
+        System.out.println("\nYour entire goal in this activity is to keep the global warming of Triton under 1.5 degrees C. Unfortunately, you have just found out" +"\n"
+        + "global warming is an issue. The island has already warmed 0.1 C since the Industrial Revolution.");
+
+        System.out.println("\nGood Luck!");
+
+        System.out.println("\nPlease enter any key below to enter the simulation.");
+
+        scan.nextLine();
+        LevelOne();
     }
 
     public static void LevelOne() {
-
+        System.out.println(wrapBars("LEVEL ONE - 1960"));
 
     }
 
@@ -50,7 +75,7 @@ public class Main {
 class Player {
 
     private String name;
-    private int level, money, energy, food, co2;
+    private int level, money, energy, food, co2, temp;
 
 
 
@@ -80,6 +105,10 @@ class Player {
 
     public int getCo2() {
         return co2;
+    }
+
+    public int getTemp() {
+        return temp;
     }
 
 }
