@@ -20,6 +20,21 @@ public class Main {
         return ret;
     }
 
+
+    public static String wrapBars(String message) {
+        String ret = "";
+
+        for(int i = 0 ; i < message.length() + 2 ; i++) {
+            ret += "-";
+        }
+
+        ret += "\n" + "|" + message + "|" + "\n";
+        for(int i = 0 ; i < message.length() + 2 ; i++) {
+            ret += "-";
+        }
+        return ret;
+    }
+
     public static void Introduction() {
         System.out.println("Please enter your name:");
         Scanner scan = new Scanner(System.in);
@@ -50,7 +65,7 @@ public class Main {
     }
 
     public static void LevelOne() {
-        System.out.println(wrapStars("LEVEL ONE - 1960"));
+        System.out.println(wrapBars("LEVEL ONE - 1960"));
 
     }
 
