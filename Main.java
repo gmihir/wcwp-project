@@ -66,8 +66,45 @@ public class Main {
 
     public static void LevelOne() {
         System.out.println(wrapBars("LEVEL ONE - 1960"));
+        //Mihir
+
+
 
     }
+
+    public static void LevelTwo() {
+        //Mihir
+    }
+
+    public static void LevelThree() {
+        //Mihir
+    }
+
+    public static void LevelFour() {
+        //Mihir
+    }
+
+    public static void LevelFive() {
+        //Rohil
+    }
+
+    public static void LevelSix() {
+        //Rohil
+    }
+
+    public static void LevelSeven() {
+        //Rohil
+    }
+
+    public static void LevelEight() {
+        //Rohil
+    }
+
+    public static void Conclusion() {
+        //Rohil
+    }
+
+
 
 
 }
@@ -75,12 +112,18 @@ public class Main {
 public class Player {
 
     private String name;
-    private int level, money, energy, food, co2, temp;
+    private int level, money, energy, food, co2;
+    private double temp;
 
 
 
     public Player(String name) {
         this.name = name;
+        level = 1;
+        temp = 0.1;
+        /* TODO
+            Determine initial values for money, energy, food, co2
+         */
     }
 
     public String getName() {
@@ -107,7 +150,7 @@ public class Player {
         return co2;
     }
 
-    public int getTemp() {
+    public double getTemp() {
         return temp;
     }
 
