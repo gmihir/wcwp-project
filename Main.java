@@ -62,8 +62,7 @@ public class Main {
 
         scan.nextLine();
         LevelOne();
-    }
-
+    }   `    `
     public static void LevelOne() {
         System.out.println(wrapBars("LEVEL ONE - 1960"));
 
