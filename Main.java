@@ -65,8 +65,14 @@ public class Main {
     }
 
     public static void LevelOne() {
+        Scanner scan = new Scanner(System.in);
         System.out.println(wrapBars("LEVEL ONE - 1960"));
         //Mihir
+
+        System.out.println("Your island of Triton is growing, and your people want you to build a university...");
+        int choice = promptUser("(1) Option 1 \n(2) Option 2 \n(3) Option 3",1,3);
+        System.out.println("You have picked Option " + choice);
+
 
 
 
@@ -102,6 +108,34 @@ public class Main {
 
     public static void Conclusion() {
         //Rohil
+    }
+
+    public static int promptUser(String message, int firstOption, int lastOption) {
+        System.out.println(message);
+        int input = -1;
+        Scanner scan = new Scanner(System.in);
+        boolean isValid = false;
+        while(!isValid) {
+            if (scan.hasNextInt()) {
+                input = scan.nextInt();
+                if(input >= firstOption && input <= lastOption)
+                {
+                    isValid = true;
+                    return input;
+                }
+                else {
+                    System.out.println("Please enter a valid option number.");
+                    continue;
+                }
+            }
+            else
+            {
+                System.out.println("Please enter a number.");
+                scan.nextLine();
+                continue;
+            }
+        }
+        return -1;
     }
 
 
