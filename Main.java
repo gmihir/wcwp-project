@@ -108,6 +108,7 @@ public class Main {
 
     public static void Conclusion() {
         //Rohil
+        System.out.println(a);
     }
 
     public static int promptUser(String message, int firstOption, int lastOption) {
