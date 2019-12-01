@@ -3,8 +3,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Introduction();
-}
+        System.out.println("Please enter your name:");
+        Scanner scan = new Scanner(System.in);
+
+        Player user= new Player(scan.nextLine());
+        Introduction(user);
+        LevelOne(user);
+
+    }
 
     public static String wrapStars(String message) {
         String ret = "";
@@ -35,11 +41,9 @@ public class Main {
         return ret;
     }
 
-    public static void Introduction() {
-        System.out.println("Please enter your name:");
-        Scanner scan = new Scanner(System.in);
+    public static void Introduction(Player p) {
 
-        Player p = new Player(scan.nextLine());
+        Scanner scan = new Scanner(System.in);
 
         System.out.println(wrapStars("Welcome, " + p.getName()));
 
@@ -50,21 +54,20 @@ public class Main {
                 "-Energy (in megawatt hours) \n -Carbon Dioxide Emissions(in millions of tons)\n");
 
         System.out.println("This simulation activity will present you with realistic, practical challenges a leader will face over decades of rule. You must take " + "\n"
-        + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. Each challenge you face will" + "\n"
-        + "include a prediction of how your energy, money, CO2 emissions, and food availability will be affected. ");
+                + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. Each challenge you face will" + "\n"
+                + "include a prediction of how your energy, money, CO2 emissions, and food availability will be affected. ");
 
         System.out.println("\nYour entire goal in this activity is to keep the global warming of Triton under 1.5 degrees C. Unfortunately, you have just found out" +"\n"
-        + "global warming is an issue. The island has already warmed 0.1 C since the Industrial Revolution.");
+                + "global warming is an issue. The island has already warmed 0.1 C since the Industrial Revolution.");
 
         System.out.println("\nGood Luck!");
 
         System.out.println("\nPlease enter any key below to enter the simulation.");
 
         scan.nextLine();
-        LevelOne();
     }
 
-    public static void LevelOne() {
+    public static void LevelOne(Player p) {
         Scanner scan = new Scanner(System.in);
         System.out.println(wrapBars("LEVEL ONE - 1960"));
         //Mihir
@@ -78,37 +81,41 @@ public class Main {
 
     }
 
-    public static void LevelTwo() {
+    public static void LevelTwo(Player p) {
         //Mihir
     }
 
-    public static void LevelThree() {
+    public static void LevelThree(Player p) {
         //Mihir
     }
 
-    public static void LevelFour() {
+    public static void LevelFour(Player p) {
         //Mihir
     }
 
-    public static void LevelFive() {
+    public static void LevelFive(Player p) {
         //Rohil
     }
 
-    public static void LevelSix() {
+    public static void LevelSix(Player p) {
         //Rohil
     }
 
-    public static void LevelSeven() {
+    public static void LevelSeven(Player p) {
         //Rohil
     }
 
-    public static void LevelEight() {
+    public static void LevelEight(Player p) {
         //Rohil
     }
 
-    public static void Conclusion() {
+    public static void Conclusion(Player p) {
         //Rohil
-        System.out.println(a);
+        System.out.println("Congratulations, " + p.getName() + "! Thanks to you, the island of Triton is a well-functioning society that has been very successful in preventing\n the global temperatures from skyrocketting");
+        System.out.println("The people of Triton tremendously appreciate everything you have done for them, especially as the harmful effects of global warming have\n become better understood.");
+        System.out.println("You will go down in history as an excellent leader!");
+
+        System.out.println(wrapStars("THE END"));
     }
 
     public static int promptUser(String message, int firstOption, int lastOption) {
@@ -187,6 +194,10 @@ public class Player {
 
     public double getTemp() {
         return temp;
+    }
+
+    public void setLevel(int toSet) {
+        level = toSet;
     }
 
 }
