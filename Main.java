@@ -87,28 +87,40 @@ public class Main {
         //Mihir
         p.getProgress();
         System.out.println("Your island of Triton is growing, and your people are buying cars like crazy. How do you deal with potential consequences of this...");
-        int choice = promptUser("(1) Impose a national speed limit of 50 MPH to use less oil  \n(2) Invest in public transportation  \n(3) Let the market regulate itself",1,3);
-     //   System.out.println("You have picked Option " + choice);
+        int choice = promptUser("(1) Impose a national speed limit of 50 MPH to use less oil  \n(2) Invest in public transportation  \n(3) Let the market regulate itself\n",1,3);
 
-        switch(choice) {
+        switch(choice) { /* CHOICE 1 */
             case 1:
                 System.out.println("You have elected to impose a national speed limit. This option conserves energy and CO2 emissions in the short-term, but not throughout the decade as your \n" +
                         "people stop following it over time. ");
-                // add the effects of this to the player class instances
+                p.addEnergy(-10);
+                p.addCO2(18);
+                p.addTemp(0.2);
                 break;
             case 2:
                 System.out.println("You have elected to invest in public transportation. Although your government lost money initially, the system is now profitable. Additionally, CO2 emissions and energy \n" +
                         "consumption are down.");
-                // add the effects of this to the player class instances
+                p.addMoney(50);
+                p.addCO2(-6);
+                p.addEnergy(12);
+                p.addTemp(0.1);
                 break;
             case 3:
-                System.out.println("You have elected to let the market regulate itself. The capitalistic nature of the car companies has spiraled out of control, your GDP has decreased and CO2 emissiosn are \n" +
-                        "out of control.");
-                // add the effects of this to the player class instances
+                System.out.println("You have elected to let the market regulate itself. The capitalistic nature of the car companies has spiraled out of control, your GDP has increased at the cost of rampant CO2 emissions \n" +
+                        "and energy consumption.");
+                p.addMoney(65);
+                p.addCO2(14);
+                p.addEnergy(-20);
+                p.addTemp(0.3);
                 break;
             default:
                 break;
         }
+
+
+
+
+
 
 
 
@@ -187,13 +199,18 @@ public class Main {
 
 
 
+    }
 
-}
+
+
+
+
 class Player {
 
     private String name;
     private int level, money, energy, food, co2;
     private double temp;
+    public boolean winning;
 
 
 
@@ -204,7 +221,7 @@ class Player {
         money = 73252; // based on hawaii
         co2 = 315; // based on hawaii and keeling curve (WE CAN CITE THIS)
         energy = 105; // based on https://www.eia.gov/state/seds/sep_use/total/pdf_cb/use_tot_HIcb.pdf (WE CAN CITE THIS)
-
+        winning = true;
         /* TODO
             Determine initial values for money, energy, food, co2
          */
@@ -242,10 +259,35 @@ class Player {
         level = toSet;
     }
 
+    public void addMoney(int toAdd){
+        money += toAdd;
+    }
+
+    public void addEnergy(int toAdd) {
+        energy += toAdd;
+    }
+
+    public void addFood(int toAdd) {
+        food += toAdd;
+    }
+
+    public void addCO2(int toAdd) {
+        co2 += toAdd;
+    }
+
+    public void addTemp(double toAdd) {
+        temp += toAdd;
+    }
+
+    public void setWinning(boolean b)
+    {
+        winning = b;
+    }
+
     public void getProgress()
     {
         System.out.println("Money: " + money + "\nEnergy: " + energy + "\nFood: " + food + "\nCO2 Emissions: " + co2);
-        System.out.println(Main.wrapBars("Temperature: " + temp));
+        System.out.println(Main.wrapBars("Global Warming: " + temp));
     }
 
 }
