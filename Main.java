@@ -62,7 +62,8 @@ public class Main {
 
         scan.nextLine();
         LevelOne();
-    }   //`    `
+    }
+
     public static void LevelOne() {
         Scanner scan = new Scanner(System.in);
         System.out.println(wrapBars("LEVEL ONE - 1960"));
@@ -76,6 +77,7 @@ public class Main {
 
 
     }
+
     public static void LevelTwo() {
         //Mihir
     }
@@ -102,16 +104,10 @@ public class Main {
 
     public static void LevelEight() {
         //Rohil
-
     }
 
     public static void Conclusion() {
         //Rohil
-        System.out.println("Congratulations, " + this.getName() + "! Thanks to you, the island of Triton is a well-functioning society that has been very successful in preventing\n the global temperatures from skyrocketting");
-        System.out.println("The people of Triton tremendously appreciate everything you have done for them, especially as the harmful effects of global warming have\n become better understood.");
-        System.out.println("You will go down in history as an excellent leader!");
-
-        System.out.println(wrapStars("THE END"));
     }
 
     public static int promptUser(String message, int firstOption, int lastOption) {
@@ -147,7 +143,7 @@ public class Main {
 
 }
 
-class Player {
+public class Player {
 
     private String name;
     private int level, money, energy, food, co2;
