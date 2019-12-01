@@ -65,7 +65,7 @@ public class Main {
                 + "to prosperity for the next 50 years. Your success will be measured by four main categories: ");
 
         System.out.println("\n -Gross Domestic Product (in millions of US Dollars) \n -Food Availability (in millions of tons of food) \n " +
-                "-Energy (in megawatt hours) \n -Carbon Dioxide Emissions(in millions of tons)\n");
+                "-Energy (in megawatt hours) \n -Carbon Dioxide Emissions(in parts per million)\n");
 
         System.out.println("This simulation activity will present you with realistic, practical challenges a leader will face over decades of rule. You must take " + "\n"
                 + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. Each challenge you face will" + "\n"
@@ -201,6 +201,10 @@ class Player {
         this.name = name;
         level = 1;
         temp = 0.1;
+        money = 73252; // based on hawaii
+        co2 = 315; // based on hawaii and keeling curve (WE CAN CITE THIS)
+        energy = 105; // based on https://www.eia.gov/state/seds/sep_use/total/pdf_cb/use_tot_HIcb.pdf (WE CAN CITE THIS)
+
         /* TODO
             Determine initial values for money, energy, food, co2
          */
