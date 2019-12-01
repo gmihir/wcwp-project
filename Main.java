@@ -9,7 +9,6 @@ public class Main {
         Player user= new Player(scan.nextLine());
         Introduction(user);
         LevelOne(user);
-        Conclusion(user);
 
     }
 
@@ -42,6 +41,20 @@ public class Main {
         return ret;
     }
 
+    public static String wrapHash(String message) {
+        String ret = "";
+
+        for(int i = 0 ; i < message.length() + 2 ; i++) {
+            ret += "#";
+        }
+
+        ret += "\n" + "#" + message + "#" + "\n";
+        for(int i = 0 ; i < message.length() + 2 ; i++) {
+            ret += "#";
+        }
+        return ret;
+    }
+
     public static void Introduction(Player p) {
 
         Scanner scan = new Scanner(System.in);
@@ -70,13 +83,32 @@ public class Main {
 
     public static void LevelOne(Player p) {
         Scanner scan = new Scanner(System.in);
-        System.out.println(wrapBars("LEVEL ONE - 1960"));
+        System.out.println(wrapHash("LEVEL ONE - 1960"));
         //Mihir
+        p.getProgress();
+        System.out.println("Your island of Triton is growing, and your people are buying cars like crazy. How do you deal with potential consequences of this...");
+        int choice = promptUser("(1) Impose a national speed limit of 50 MPH to use less oil  \n(2) Invest in public transportation  \n(3) Let the market regulate itself",1,3);
+     //   System.out.println("You have picked Option " + choice);
 
-        System.out.println("Your island of Triton is growing, and your people want you to build a university...");
-        int choice = promptUser("(1) Option 1 \n(2) Option 2 \n(3) Option 3",1,3);
-        System.out.println("You have picked Option " + choice);
-
+        switch(choice) {
+            case 1:
+                System.out.println("You have elected to impose a national speed limit. This option conserves energy and CO2 emissions in the short-term, but not throughout the decade as your \n" +
+                        "people stop following it over time. ");
+                // add the effects of this to the player class instances
+                break;
+            case 2:
+                System.out.println("You have elected to invest in public transportation. Although your government lost money initially, the system is now profitable. Additionally, CO2 emissions and energy \n" +
+                        "consumption are down.");
+                // add the effects of this to the player class instances
+                break;
+            case 3:
+                System.out.println("You have elected to let the market regulate itself. The capitalistic nature of the car companies has spiraled out of control, your GDP has decreased and CO2 emissiosn are \n" +
+                        "out of control.");
+                // add the effects of this to the player class instances
+                break;
+            default:
+                break;
+        }
 
 
 
@@ -204,6 +236,12 @@ class Player {
 
     public void setLevel(int toSet) {
         level = toSet;
+    }
+
+    public void getProgress()
+    {
+        System.out.println("Money: " + money + "\nEnergy: " + energy + "\nFood: " + food + "\nCO2 Emissions: " + co2);
+        System.out.println(Main.wrapBars("Temperature: " + temp));
     }
 
 }
