@@ -115,6 +115,11 @@ public class Main {
         System.out.println();
         System.out.println("Congratulations, " + p.getName() + "! Thanks to you, the island of Triton is a well-functioning society that has been very successful in preventing" + "\n" + "the global temperatures from skyrocketting.");
         System.out.println("The people of Triton tremendously appreciate everything you have done for them, especially as the harmful effects of global warming have" + "\n" + "become better understood.");
+        System.out.println("Your country's ending GDP was:$ " + p.getMoney());
+        System.out.println("Your country's ending emissions were: " + p.getCo2() + " million tons");
+        System.out.println("Your country's ending food supply was: " + p.getFood() + " million tons");
+        System.out.println("Your country used " +p.getEnergy() + " MegaWatt hours.");
+        System.out.println("Due to your actions, the global temperature raised only by " + p.getTemp() + "degrees!");
         System.out.println("You will go down in history as an excellent leader!");
 
         System.out.println(wrapStars("THE END"));
