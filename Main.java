@@ -9,6 +9,7 @@ public class Main {
         Player user= new Player(scan.nextLine());
         Introduction(user);
         LevelOne(user);
+        Conclusion(user);
 
     }
 
@@ -111,8 +112,9 @@ public class Main {
 
     public static void Conclusion(Player p) {
         //Rohil
-        System.out.println("Congratulations, " + p.getName() + "! Thanks to you, the island of Triton is a well-functioning society that has been very successful in preventing\n the global temperatures from skyrocketting");
-        System.out.println("The people of Triton tremendously appreciate everything you have done for them, especially as the harmful effects of global warming have\n become better understood.");
+        System.out.println();
+        System.out.println("Congratulations, " + p.getName() + "! Thanks to you, the island of Triton is a well-functioning society that has been very successful in preventing" + "\n" + "the global temperatures from skyrocketting.");
+        System.out.println("The people of Triton tremendously appreciate everything you have done for them, especially as the harmful effects of global warming have" + "\n" + "become better understood.");
         System.out.println("You will go down in history as an excellent leader!");
 
         System.out.println(wrapStars("THE END"));
@@ -150,8 +152,7 @@ public class Main {
 
 
 }
-
-public class Player {
+class Player {
 
     private String name;
     private int level, money, energy, food, co2;
