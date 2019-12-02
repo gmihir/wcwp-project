@@ -185,6 +185,37 @@ public class Main {
     public static void LevelTwo(Player p) {
         //Mihir - 1980
         System.out.println("\n\n\n" + Main.wrapHash("LEVEL TWO - 1980"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        System.out.println("Industrialization is still continuing throughout Triton...\n\n");
+
+        System.out.println("In the Revelle province, a major oil spill has occurred. How do you deal with the fallout...");
+
+        int choice1 = promptUser("(1) Invest money into alternative energy, even though it's inefficient\n(2) Impose more stringent regulations on oil companies\n(3) Fine the oil companies to force them to comply",1,3);
+
+        switch(choice1) {
+            case 1:
+                System.out.println("You have chosen to invest money into alternative energy. Since it's inefficient, this approach reduces CO2 emissions a little bit but greatly reduces your GDP");
+                p.addCO2(-20);
+                p.addEnergy(12);
+                p.addMoney(-200);
+                p.addTemp(-0.05);
+                break;
+            case 2:
+                System.out.println("You have chosen to impose more regulations onto the oil companies. This harms GDP and energy reserves, but cleans up the spill and reduces CO2 emissions");
+                p.addMoney(-300);
+                p.addEnergy(-20);
+                p.addCO2(-25);
+                p.addTemp(0.05);
+                break;
+            case 3:
+                System.out.println("You have chosen to fine oil companies on their byproducts. This approach works throughout the decade and bolsters energy production.");
+                p.addMoney(80);
+                p.addEnergy(20);
+                p.addTemp(0.05);
+                break;
+        }
     }
 
     public static void LevelThree(Player p) {
