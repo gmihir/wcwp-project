@@ -62,7 +62,7 @@ public class Main {
         System.out.println(wrapStars("Welcome, " + p.getName()));
 
         System.out.println(p.getName() + ", you are now the leader of an island named Triton in the middle of the Pacific. Your goal is to lead your island nation" + "\n"
-                + "to prosperity for the next 50 years. Your success will be measured by four main categories: ");
+                + "to prosperity for the next 80 years. Your progress will be measured by four main categories: ");
 
         System.out.println("\n -Gross Domestic Product (in millions of US Dollars) \n -Food Availability (in millions of tons of food) \n " +
                 "-Energy (in megawatt hours) \n -Carbon Dioxide Emissions(in parts per million)\n");
@@ -83,7 +83,7 @@ public class Main {
 
     public static void LevelOne(Player p) {
         Scanner scan = new Scanner(System.in);
-        System.out.println(wrapHash("LEVEL ONE - 1960"));
+        System.out.println(wrapHash("LEVEL ONE - 1970"));
         //Mihir
         p.getProgress();
         System.out.println("Your island of Triton is growing, and your people are buying cars like crazy. How do you deal with potential consequences of this...");
@@ -92,14 +92,14 @@ public class Main {
         switch(choice) { /* CHOICE 1 */
             case 1:
                 System.out.println("You have elected to impose a national speed limit. This option conserves energy and CO2 emissions in the short-term, but not throughout the decade as your \n" +
-                        "people stop following it over time. ");
+                        "people stop following it over time.\n ");
                 p.addEnergy(-10);
                 p.addCO2(18);
                 p.addTemp(0.2);
                 break;
             case 2:
                 System.out.println("You have elected to invest in public transportation. Although your government lost money initially, the system is now profitable. Additionally, CO2 emissions and energy \n" +
-                        "consumption are down.");
+                        "consumption are down.\n");
                 p.addMoney(50);
                 p.addCO2(-6);
                 p.addEnergy(12);
@@ -107,7 +107,7 @@ public class Main {
                 break;
             case 3:
                 System.out.println("You have elected to let the market regulate itself. The capitalistic nature of the car companies has spiraled out of control, your GDP has increased at the cost of rampant CO2 emissions \n" +
-                        "and energy consumption.");
+                        "and energy consumption.\n");
                 p.addMoney(65);
                 p.addCO2(14);
                 p.addEnergy(-20);
@@ -117,6 +117,35 @@ public class Main {
                 break;
         }
 
+        System.out.println("\nRapid industrialization has led to pollution at waterways, contaminating water supplies for irrigation. How do you fix this... ");
+        int choice2 = promptUser("(1) Establish legislation forcing polluters to implement technology to reduce impact  \n(2) Government enforced restrictions on industrialization at waterways " +
+                " \n(3) Push for citizen initiative to organize waterway cleanups\n",1,3);
+
+        switch(choice2) {
+            case 1:
+                System.out.println("You have chosen to establish legislation forcing polluters to develop technology to clean up after themselves. This path minimally hurts the economy as growth slows but protects your food supply.");
+                p.addFood(20);
+                p.addMoney(-30);
+                break;
+            case 2:
+                System.out.println("You have chosen to restrict industrialization at waterways. This path protects food supplies but drastically hurts the economy and energy production.");
+                p.addFood(20);
+                p.addMoney(-1000);
+                p.addEnergy(-40);
+                break;
+            case 3:
+                System.out.println("You have chosen to push for a citizen initiative to organize waterway cleanups. This path is ineffective at reducing pollution even minimally, and the food supply is now dwindling.");
+                p.addFood(-50);
+                p.addMoney(50);
+                p.addEnergy(60);
+                p.addTemp(0.1);
+                break;
+            default:
+                break;
+        }
+
+        p.getProgress();
+
 
 
 
@@ -126,32 +155,41 @@ public class Main {
 
     }
 
+
+
+
+
+
+
+
+
+
     public static void LevelTwo(Player p) {
-        //Mihir
+        //Mihir - 1980
     }
 
     public static void LevelThree(Player p) {
-        //Mihir
+        //Mihir - 1990
     }
 
     public static void LevelFour(Player p) {
-        //Mihir
+        //Mihir - 2000
     }
 
     public static void LevelFive(Player p) {
-        //Rohil
+        //Rohil - 2010
     }
 
     public static void LevelSix(Player p) {
-        //Rohil
+        //Rohil - 2020
     }
 
     public static void LevelSeven(Player p) {
-        //Rohil
+        //Rohil - 2030
     }
 
     public static void LevelEight(Player p) {
-        //Rohil
+        //Rohil - 2040
     }
 
     public static void Conclusion(Player p) {
@@ -199,7 +237,7 @@ public class Main {
 
 
 
-    }
+}
 
 
 
@@ -218,10 +256,11 @@ class Player {
         this.name = name;
         level = 1;
         temp = 0.1;
-        money = 73252; // based on hawaii
+        money = 7325; // based on hawaii / 10
         co2 = 315; // based on hawaii and keeling curve (WE CAN CITE THIS)
         energy = 105; // based on https://www.eia.gov/state/seds/sep_use/total/pdf_cb/use_tot_HIcb.pdf (WE CAN CITE THIS)
         winning = true;
+        food = 400;
         /* TODO
             Determine initial values for money, energy, food, co2
          */
