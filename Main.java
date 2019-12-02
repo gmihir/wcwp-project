@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class Main {
 
@@ -326,6 +327,7 @@ class Player {
     public void getProgress()
     {
         System.out.println("Money: " + money + "\nEnergy: " + energy + "\nFood: " + food + "\nCO2 Emissions: " + co2);
+        temp = Math.round((temp) * 10) / 10.0; // to deal with floating point errors
         System.out.println(Main.wrapBars("Global Warming: " + temp + " C "));
     }
 
