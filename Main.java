@@ -70,7 +70,7 @@ public class Main {
 
         System.out.println("This simulation activity will present you with realistic, practical challenges a leader will face over decades of rule.\n\nYou must take "
                 + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. \n\nEach challenge you face will"
-                + "require you to consider how your energy, money, CO2 emissions, and food availability will be affected. ");
+                + " require you to consider how your energy, money, CO2 emissions, and food availability will be affected. ");
 
         System.out.println("\nYour entire goal in this activity is to keep the global warming of Triton under 1.5 degrees C. Unfortunately, you have just found out" +"\n"
                 + "global warming is an issue. The island has already warmed 0.1 C since the Industrial Revolution.");
@@ -86,7 +86,8 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println(wrapHash("LEVEL ONE - 1970"));
         //Mihir
-        p.getProgress();
+        boolean isEnd = false;
+        p.getProgress(isEnd);
         System.out.println("Your island of Triton is growing, and your people are buying cars like crazy. How do you deal with potential consequences of this...");
         int choice = promptUser("(1) Impose a national speed limit of 50 MPH to use less oil  \n(2) Invest in public transportation  \n(3) Let the market regulate itself\n",1,3);
 
@@ -172,7 +173,8 @@ public class Main {
 
         }
 
-        p.getProgress();
+        isEnd = true;
+        p.getProgress(isEnd);
         if(p.getTemp() <= 1.5)
             p.setLevel(2);
     }
@@ -339,7 +341,7 @@ class Player {
     }
 
 
-    public void getProgress()
+    public void getProgress(boolean b)
     {
         int moneyDiff = money-7325;
 
@@ -371,10 +373,10 @@ class Player {
         temp = Math.round((temp) * 100) / 100.0; // to deal with floating point errors
         System.out.println(Main.wrapBars("Global Warming: " + temp + " C "));
         winning = temp >- 1.5;
-        if(!winning) {
+        if(!winning && b) {
             System.out.println(Main.wrapStars("You have failed, but you may continue for fun."));
         }
-        else
+        else if(b)
             System.out.println(Main.wrapStars("PASSED LEVEL " + (level) + ""));
 
     }
