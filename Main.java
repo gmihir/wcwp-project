@@ -10,6 +10,7 @@ public class Main {
         Player user= new Player(scan.nextLine());
         Introduction(user);
         LevelOne(user);
+        LevelTwo(user);
 
     }
 
@@ -183,6 +184,7 @@ public class Main {
 
     public static void LevelTwo(Player p) {
         //Mihir - 1980
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL TWO - 1980"));
     }
 
     public static void LevelThree(Player p) {
@@ -345,27 +347,27 @@ class Player {
     {
         int moneyDiff = money-7325;
 
-        String mDiff = moneyDiff + "";
+        String mDiff = moneyDiff + " from start";
         if(moneyDiff > 0)
-            mDiff = "+" + moneyDiff;
+            mDiff = "+" + mDiff;
 
         int energyDiff = energy-105;
 
-        String eDiff = energyDiff + "";
+        String eDiff = energyDiff + " from start";
         if(energyDiff > 0)
-            eDiff = "+" + energyDiff;
+            eDiff = "+" + eDiff;
 
         int foodDiff = food-400;
 
-        String fDiff = foodDiff + "";
+        String fDiff = foodDiff + " from start";
         if(foodDiff > 0)
-            fDiff = "+" + foodDiff;
+            fDiff = "+" + fDiff;
 
         int co2Diff = co2-315;
 
-        String cDiff = co2Diff + "";
+        String cDiff = co2Diff + " from start";
         if(co2Diff > 0)
-            cDiff = "+" + co2Diff;
+            cDiff = "+" + cDiff;
 
         System.out.println("Money: " + money + "(" + mDiff + ")" + "\nEnergy: " + energy + "(" + eDiff + ")" +  "\nFood: " + food + "(" + fDiff + ")" +  "\nCO2 Emissions: " + co2 + "(" + cDiff + ")");
 
