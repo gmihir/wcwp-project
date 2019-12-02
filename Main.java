@@ -145,7 +145,36 @@ public class Main {
                 break;
         }
 
+        System.out.println("\nLead poisoning is on the rise and your scientists suspect it is due to unregulated industrial outputs, what do you do...");
+        int choice3 = promptUser("(1) Test all crop fields and stop food production on contaminated ones \n(2) Encourage consumers to only purchase food from ethical companies " +
+                "\n(3) Add new regulations and force random inspections to ensure they are met",1,3);
+
+        switch(choice3) {
+            case 1:
+                System.out.println("You have chosen to test all crop fields and stop food production on contaminated ones. This option drastically reduces food production and harms your GDP as the problem is extremely widespread");
+                p.addFood(-40);
+                p.addMoney(-30);
+                p.addTemp(0.05);
+                break;
+            case 2:
+                System.out.println("You have chosen to encourage consumers to only purchase food from ethical companies. This option is not successful in causing enough change and the problem continues.");
+                p.addFood(-40);
+                p.addMoney(-30);
+                p.addEnergy(30);
+                p.addTemp(0.05);
+                break;
+            case 3:
+                System.out.println("You have chosen to add new regulations and force random inspections. This option is successful throughout the decade and beyond since it forces companies to consider their waste.");
+                p.addFood(40);
+                p.addMoney(-20);
+                p.addEnergy(-10);
+                p.addCO2(12);
+
+        }
+
         p.getProgress();
+        if(p.getTemp() <= 1.5)
+            p.setLevel(2);
     }
 
 
@@ -309,11 +338,45 @@ class Player {
         winning = b;
     }
 
+
     public void getProgress()
     {
-        System.out.println("Money: " + money + "\nEnergy: " + energy + "\nFood: " + food + "\nCO2 Emissions: " + co2);
-        temp = Math.round((temp) * 10) / 10.0; // to deal with floating point errors
+        int moneyDiff = money-7325;
+
+        String mDiff = moneyDiff + "";
+        if(moneyDiff > 0)
+            mDiff = "+" + moneyDiff;
+
+        int energyDiff = energy-105;
+
+        String eDiff = energyDiff + "";
+        if(energyDiff > 0)
+            eDiff = "+" + energyDiff;
+
+        int foodDiff = food-400;
+
+        String fDiff = foodDiff + "";
+        if(foodDiff > 0)
+            fDiff = "+" + foodDiff;
+
+        int co2Diff = co2-315;
+
+        String cDiff = co2Diff + "";
+        if(co2Diff > 0)
+            cDiff = "+" + co2Diff;
+
+        System.out.println("Money: " + money + "(" + mDiff + ")" + "\nEnergy: " + energy + "(" + eDiff + ")" +  "\nFood: " + food + "(" + fDiff + ")" +  "\nCO2 Emissions: " + co2 + "(" + cDiff + ")");
+
+
+        temp = Math.round((temp) * 100) / 100.0; // to deal with floating point errors
         System.out.println(Main.wrapBars("Global Warming: " + temp + " C "));
+        winning = temp >- 1.5;
+        if(!winning) {
+            System.out.println(Main.wrapStars("You have failed, but you may continue for fun."));
+        }
+        else
+            System.out.println(Main.wrapStars("PASSED LEVEL " + (level) + ""));
+
     }
 
 }
