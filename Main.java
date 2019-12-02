@@ -93,14 +93,14 @@ public class Main {
         switch(choice) { /* CHOICE 1 */
             case 1:
                 System.out.println("You have elected to impose a national speed limit. This option conserves energy and CO2 emissions in the short-term, but not throughout the decade as your \n" +
-                        "people stop following it over time.\n ");
+                        "people stop following it over time.");
                 p.addEnergy(-10);
                 p.addCO2(18);
                 p.addTemp(0.2);
                 break;
             case 2:
                 System.out.println("You have elected to invest in public transportation. Although your government lost money initially, the system is now profitable. Additionally, CO2 emissions and energy \n" +
-                        "consumption are down.\n");
+                        "consumption are down.");
                 p.addMoney(50);
                 p.addCO2(-6);
                 p.addEnergy(12);
@@ -108,7 +108,7 @@ public class Main {
                 break;
             case 3:
                 System.out.println("You have elected to let the market regulate itself. The capitalistic nature of the car companies has spiraled out of control, your GDP has increased at the cost of rampant CO2 emissions \n" +
-                        "and energy consumption.\n");
+                        "and energy consumption.");
                 p.addMoney(65);
                 p.addCO2(14);
                 p.addEnergy(-20);
@@ -118,7 +118,7 @@ public class Main {
                 break;
         }
 
-        System.out.println("\nRapid industrialization has led to pollution at waterways, contaminating water supplies for irrigation. How do you fix this... ");
+        System.out.println("\nRapid industrialization has led to pollution at waterways, contaminating water supplies for irrigation. How do you fix this... \n");
         int choice2 = promptUser("(1) Establish legislation forcing polluters to implement technology to reduce impact  \n(2) Government enforced restrictions on industrialization at waterways " +
                 " \n(3) Push for citizen initiative to organize waterway cleanups\n",1,3);
 
@@ -146,22 +146,7 @@ public class Main {
         }
 
         p.getProgress();
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
 
 
 
