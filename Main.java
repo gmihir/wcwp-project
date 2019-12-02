@@ -67,9 +67,9 @@ public class Main {
         System.out.println("\n -Gross Domestic Product (in millions of US Dollars) \n -Food Availability (in millions of tons of food) \n " +
                 "-Energy (in megawatt hours) \n -Carbon Dioxide Emissions(in parts per million)\n");
 
-        System.out.println("This simulation activity will present you with realistic, practical challenges a leader will face over decades of rule. You must take " + "\n"
-                + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. Each challenge you face will" + "\n"
-                + "include a prediction of how your energy, money, CO2 emissions, and food availability will be affected. ");
+        System.out.println("This simulation activity will present you with realistic, practical challenges a leader will face over decades of rule.\n\nYou must take "
+                + "measures that will keep your people happy while also protecting against future consequences from your expansion and industrialization. \n\nEach challenge you face will"
+                + "require you to consider how your energy, money, CO2 emissions, and food availability will be affected. ");
 
         System.out.println("\nYour entire goal in this activity is to keep the global warming of Triton under 1.5 degrees C. Unfortunately, you have just found out" +"\n"
                 + "global warming is an issue. The island has already warmed 0.1 C since the Industrial Revolution.");
@@ -287,7 +287,7 @@ class Player {
     public void getProgress()
     {
         System.out.println("Money: " + money + "\nEnergy: " + energy + "\nFood: " + food + "\nCO2 Emissions: " + co2);
-        System.out.println(Main.wrapBars("Global Warming: " + temp));
+        System.out.println(Main.wrapBars("Global Warming: " + temp + " C "));
     }
 
 }
