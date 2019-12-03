@@ -178,6 +178,10 @@ public class Main {
         p.getProgress(isEnd);
         if(p.getTemp() <= 1.5)
             p.setLevel(2);
+
+        System.out.println("\nPlease enter any key below to enter level two.");
+
+        scan.nextLine();
     }
 
 
