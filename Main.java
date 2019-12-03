@@ -409,12 +409,8 @@ class Player {
 
         temp = Math.round((temp) * 100) / 100.0; // to deal with floating point errors
         System.out.println(Main.wrapBars("Global Warming: " + temp + " C "));
-        winning = temp >- 1.5;
-        if(!winning && b) {
-            System.out.println(Main.wrapStars("You have failed, but you may continue for fun."));
-        }
-        else if(b)
-            System.out.println(Main.wrapStars("PASSED LEVEL " + (level) + ""));
+
+            System.out.println(Main.wrapStars("LEVEL " + (level) + " COMPLETED"));
 
     }
 
