@@ -11,6 +11,13 @@ public class Main {
         Introduction(user);
         LevelOne(user);
         LevelTwo(user);
+        //LevelThree(user);
+        //LevelFour(user);
+        LevelFive(user);
+        //LevelSix(user);
+        //LevelSeven(user);
+        //LevelEight(user);
+        Conclusion(user);
 
     }
 
@@ -176,8 +183,7 @@ public class Main {
 
         isEnd = true;
         p.getProgress(isEnd);
-        if(p.getTemp() <= 1.5)
-            p.setLevel(2);
+        p.setLevel(2);
 
         System.out.println("\nPlease enter any key below to enter level two.");
 
@@ -188,6 +194,7 @@ public class Main {
 
     public static void LevelTwo(Player p) {
         //Mihir - 1980
+        Scanner scan = new Scanner(System.in);
         System.out.println("\n\n\n" + Main.wrapHash("LEVEL TWO - 1980"));
         boolean isEnd = false;
         p.getProgress(isEnd);
@@ -220,18 +227,55 @@ public class Main {
                 p.addTemp(0.05);
                 break;
         }
+
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(3);
+
+        System.out.println("\nPlease enter any key below to enter level three.");
+
+        scan.nextLine();
     }
 
     public static void LevelThree(Player p) {
         //Mihir - 1990
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL THREE - 1990"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        //ENTER LEVEL CODE HERE
+
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(4);
+
+        System.out.println("\nPlease enter any key below to enter level four.");
+
+        scan.nextLine();
     }
 
     public static void LevelFour(Player p) {
         //Mihir - 2000
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL FOUR - 2000"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        //ENTER LEVEL CODE HERE
+
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(5);
+
+        System.out.println("\nPlease enter any key below to enter level five.");
+
+        scan.nextLine();
     }
 
     public static void LevelFive(Player p) {
         //Rohil - 2010
+        Scanner scan = new Scanner(System.in);
         System.out.println("\n\n\n" + Main.wrapHash("LEVEL FIVE - 2010"));
         boolean isEnd = false;
         p.getProgress(isEnd);
@@ -263,18 +307,91 @@ public class Main {
                 p.addCO2(40);
                 break;
         }
+
+        System.out.println("You find out that cruise companies are heavily polluting the water that they sail in due to the rules of Maritime law.");
+
+        int choice2 = promptUser("(1)Collaborate with other nations to create a good system for regulating how much waste cruise companies can release into the environment.\n(2)Encourage customers to think twice about the harmful things that the companies are doing to the ocean.\n(3)Try to create other methods of vacations that people would enjoy, but are less harmful to the cruises.", 1, 3);
+        switch(choice2)
+        {
+            case 1:
+                System.out.println("You have chosen to collaborate with other countries in an attempt to regulate the pollution of the companies. This will greatly help reduce emissions, but will decrease GDP");
+                p.addMoney(-50);
+                p.addCO2(-20);
+                p.addTemp(0.05);
+                break;
+            case 2:
+                System.out.println("You have chose to launch a campaign telling customers about the harmful effects of cruises. This is somewhat effective in lowering emissions, but lowers GDP as a result.");
+                p.addTemp(0.05);
+                p.addMoney(-50);
+                p.addCO2(-10);
+                break;
+            case 3:
+                System.out.println("You have chosen to invest in looking for a more environmentally friendly alternative to cruises. This lowers GDP and does not have a very large effect on CO2 emissions as cruises are still as popular as ever");
+                p.addTemp(0.1);
+                p.addMoney(-50);
+                break;
+        }
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(6);
+
+        System.out.println("\nPlease enter any key below to enter level six.");
+
+        scan.nextLine();
     }
 
     public static void LevelSix(Player p) {
         //Rohil - 2020
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL SIX - 2020"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        //ENTER LEVEL CODE HERE
+
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(7);
+
+        System.out.println("\nPlease enter any key below to enter level seven.");
+
+        scan.nextLine();
     }
 
     public static void LevelSeven(Player p) {
         //Rohil - 2030
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL SEVEN - 2030"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        //ENTER LEVEL CODE HERE
+
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(8);
+
+        System.out.println("\nPlease enter any key below to enter level eight.");
+
+        scan.nextLine();
     }
 
     public static void LevelEight(Player p) {
         //Rohil - 2040
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL EIGHT - 2040"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        //ENTER LEVEL CODE HERE
+
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(0);
+
+        System.out.println("\nPlease enter any key to continue.");
+
+        scan.nextLine();
     }
 
     public static void Conclusion(Player p) {
@@ -446,8 +563,10 @@ class Player {
 
         temp = Math.round((temp) * 100) / 100.0; // to deal with floating point errors
         System.out.println(Main.wrapBars("Global Warming: " + temp + " C "));
-
+        if(b) {
             System.out.println(Main.wrapStars("LEVEL " + (level) + " COMPLETED"));
+        }
+
 
     }
 
