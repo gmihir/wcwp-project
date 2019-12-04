@@ -232,6 +232,37 @@ public class Main {
 
     public static void LevelFive(Player p) {
         //Rohil - 2010
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL FIVE - 2010"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        System.out.println("With the growing technology, companies on Triton start looking for ways to make money faster..." + "\n\n");
+
+        System.out.println("Due to the onset of fast fashion companies, people are buying significantly more clothes than they would otherwise, leading to the burning of clothes and releasing CO2 into the environment.");
+
+        int choice1 = promptUser("(1)Launch a campaign to educate the public about what is happening here, encouraging them to buy fewer clothes.\n(2)Invest in new research to find better ways to reuse old clothes or dispose without hurting the environment.\n(3)Let people buy fewer clothes on their own, and hope the problem gets resolved on its own.",1,3);
+        switch(choice1) {
+            case 1:
+                System.out.println("You have chose to launch a campaign to attempt to educate the public about these bad business practices. This approach has a small effect on a portion of the public due to your credibility.");
+                p.addMoney(-50);
+                //p.addEnergy(20);
+                p.addTemp(0.1);
+                p.addCO2(-5);
+                break;
+            case 2:
+                System.out.println("You have chosen to invest in research. This reduces GDP in the short run, but greatly helps with CO2 emissions.");
+                p.addMoney(-50);
+                //p.addEnergy(20);
+                p.addCO2(-30);
+                p.addTemp(0.05);
+                break;
+            case 3:
+                System.out.println("You have chosen to take no action against these companies. Your GDP benefits, but CO2 emissions and temperature are affected greatly");
+                p.addMoney(25);
+                p.addTemp(0.2);
+                p.addCO2(40);
+                break;
+        }
     }
 
     public static void LevelSix(Player p) {
@@ -249,14 +280,20 @@ public class Main {
     public static void Conclusion(Player p) {
         //Rohil
         System.out.println();
-        System.out.println("Congratulations, " + p.getName() + "! Thanks to you, the island of Triton is a well-functioning society that has been very successful in preventing" + "\n" + "the global temperatures from skyrocketting.");
-        System.out.println("The people of Triton tremendously appreciate everything you have done for them, especially as the harmful effects of global warming have" + "\n" + "become better understood.");
-        System.out.println("Your country's ending GDP was:$ " + p.getMoney());
-        System.out.println("Your country's ending emissions were: " + p.getCo2() + " million tons");
-        System.out.println("Your country's ending food supply was: " + p.getFood() + " million tons");
-        System.out.println("Your country used " +p.getEnergy() + " MegaWatt hours.");
-        System.out.println("Due to your actions, the global temperature raised only by " + p.getTemp() + "degrees!");
-        System.out.println("You will go down in history as an excellent leader!");
+        if(p.getTemp() <= 1.5) {
+            System.out.println("Congratulations, " + p.getName() + "! Thanks to you, the island of Triton is a well-functioning society that has been very successful in preventing" + "\n" + "the global temperatures from skyrocketting.");
+            System.out.println("The people of Triton tremendously appreciate everything you have done for them, especially as the harmful effects of global warming have" + "\n" + "become better understood.");
+            System.out.println("Your country's ending GDP was:$ " + p.getMoney());
+            System.out.println("Your country's ending emissions were: " + p.getCo2() + " million tons");
+            System.out.println("Your country's ending food supply was: " + p.getFood() + " million tons");
+            System.out.println("Your country used " +p.getEnergy() + " MegaWatt hours.");
+            System.out.println("Due to your actions, the global temperature raised only by " + p.getTemp() + "degrees!");
+            System.out.println("You will go down in history as an excellent leader!");
+        }
+        else {
+            System.out.println("You have failed. The global temperatures have risen by over 1.5 degrees celcius and global warming is rampant. You have pushed society past the point of recovery.");
+        }
+
 
         System.out.println(wrapStars("THE END"));
     }
