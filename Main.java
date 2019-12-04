@@ -244,7 +244,70 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        //ENTER LEVEL CODE HERE
+        int choice1 = promptUser("", 1,3);
+        swtich(choice1) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice2 = promptUser("", 1,3);
+        swtich(choice2) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice3 = promptUser("", 1,3);
+        swtich(choice3) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+
 
         isEnd = true;
         p.getProgress(isEnd);
@@ -262,7 +325,69 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        //ENTER LEVEL CODE HERE
+        int choice1 = promptUser("", 1,3);
+        swtich(choice1) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice2 = promptUser("", 1,3);
+        swtich(choice2) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice3 = promptUser("", 1,3);
+        swtich(choice3) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
 
         isEnd = true;
         p.getProgress(isEnd);
@@ -331,6 +456,30 @@ public class Main {
                 p.addMoney(-50);
                 break;
         }
+
+        System.out.println("The Prime Minister of Canada approves a new oil pipeline to be built after making climate change one of his biggest campaign issues.");
+
+        int choice3 = promptUser("(1)Arrange a meeting with the Canadian Prime Minister to find a better way to make the country more money.\n(2)Launch a campaign that slanders the Canadian government for going against their word.\n(3)Attack the company that is building the pipleine in Canada and try to shut them down.", 1, 3);
+        swtich(choice3) {
+            case 1:
+                System.out.println("You have chosen to meet with the Canadian PM. This meeting is successful and he finds a different way to increase his country's GDP.\n You have reduced the emissions. But have lost money on the time spent with the Canadian government.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(-20);
+                break;
+            case 2:
+                System.out.println("You have chosen to slander the Canadian PM. This lowers GDP and does not help, as the Canadian citizens are very prideful in their government.");
+                p.addMoney(-100);
+                p.addTemp(0.1);
+                p.addCO2(20);
+                break;
+            case 3:
+                System.out.println("You have chosen to attack the company. This lowers your GDP and does not deter the company from doing anything.");
+                p.addMoney(-50);
+                p.addTemp(0.1);
+                p.addCO2(20);
+                break;
+        }
         isEnd = true;
         p.getProgress(isEnd);
         p.setLevel(6);
@@ -347,7 +496,70 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        //ENTER LEVEL CODE HERE
+        int choice1 = promptUser("", 1,3);
+        swtich(choice1) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice2 = promptUser("", 1,3);
+        swtich(choice2) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice3 = promptUser("", 1,3);
+        swtich(choice3) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+
 
         isEnd = true;
         p.getProgress(isEnd);
@@ -365,7 +577,69 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        //ENTER LEVEL CODE HERE
+        int choice1 = promptUser("", 1,3);
+        swtich(choice1) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice2 = promptUser("", 1,3);
+        swtich(choice2) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice3 = promptUser("", 1,3);
+        swtich(choice3) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
 
         isEnd = true;
         p.getProgress(isEnd);
@@ -383,7 +657,69 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        //ENTER LEVEL CODE HERE
+        int choice1 = promptUser("", 1,3);
+        swtich(choice1) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice2 = promptUser("", 1,3);
+        swtich(choice2) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
+        int choice3 = promptUser("", 1,3);
+        swtich(choice3) {
+            case 1:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 2:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+            case 3:
+                System.out.println("");
+                p.addMoney();
+                p.addTemp();
+                p.addCO2();
+                break;
+        }
 
         isEnd = true;
         p.getProgress(isEnd);
