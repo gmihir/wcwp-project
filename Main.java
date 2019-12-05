@@ -13,11 +13,11 @@ public class Main {
         LevelTwo(user);
         //LevelThree(user);
         //LevelFour(user);
-        LevelFive(user);
+       // LevelFive(user);
         //LevelSix(user);
         //LevelSeven(user);
         //LevelEight(user);
-        Conclusion(user);
+      //  Conclusion(user);
 
     }
 
@@ -228,6 +228,31 @@ public class Main {
                 break;
         }
 
+        System.out.println("\nA scientist known as James Hansen reports the rise of CO2 is correlated to climate change. What will you do...");
+        int choice2 = promptUser("(1) Trust consumers will make buying decisions that are environmentally conscious\n(2) Give Hansen a national stage and launch a government agency devoted to reducing CO2 emissions\n(3) Ignore Hansen and promote industry",1,3);
+
+        switch(choice2) {
+            case 1:
+                System.out.println("You have chosen to trust consumers. This doesn't work in the capitalistic society of Triton wants the lowest prices. This greatly increases CO2 emissions.");
+                p.addCO2(40);
+                p.addMoney(60);
+                p.addTemp(0.05);
+                break;
+            case 2:
+                System.out.println("You have chosen to promote Hansen's findings and form the Environmental Protection Agency. This is beneficial as it causes widespread change.");
+                p.addMoney(-100);
+                p.addCO2(-50);
+                p.addTemp(-0.05);
+                break;
+            case 3:
+                System.out.println("You have chosen to ignore Hansen and promote domestic industry. This bolsters GDP but greatly hurts CO2 emissions and food supplies.");
+                p.addMoney(400);
+                p.addCO2(80);
+                p.addTemp(0.1);
+                p.addFood(-30);
+                break;
+        }
+
         isEnd = true;
         p.getProgress(isEnd);
         p.setLevel(3);
@@ -237,7 +262,7 @@ public class Main {
         scan.nextLine();
     }
 
-    public static void LevelThree(Player p) {
+   /* public static void LevelThree(Player p) {
         //Mihir - 1990
         Scanner scan = new Scanner(System.in);
         System.out.println("\n\n\n" + Main.wrapHash("LEVEL THREE - 1990"));
@@ -245,7 +270,7 @@ public class Main {
         p.getProgress(isEnd);
 
         int choice1 = promptUser("", 1,3);
-        swtich(choice1) {
+        switch(choice1) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -266,7 +291,7 @@ public class Main {
                 break;
         }
         int choice2 = promptUser("", 1,3);
-        swtich(choice2) {
+        switch(choice2) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -287,7 +312,7 @@ public class Main {
                 break;
         }
         int choice3 = promptUser("", 1,3);
-        swtich(choice3) {
+        switch(choice3) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -326,7 +351,7 @@ public class Main {
         p.getProgress(isEnd);
 
         int choice1 = promptUser("", 1,3);
-        swtich(choice1) {
+        switch(choice1) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -347,7 +372,7 @@ public class Main {
                 break;
         }
         int choice2 = promptUser("", 1,3);
-        swtich(choice2) {
+        switch(choice2) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -368,7 +393,7 @@ public class Main {
                 break;
         }
         int choice3 = promptUser("", 1,3);
-        swtich(choice3) {
+        switch(choice3) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -460,7 +485,7 @@ public class Main {
         System.out.println("The Prime Minister of Canada approves a new oil pipeline to be built after making climate change one of his biggest campaign issues.");
 
         int choice3 = promptUser("(1)Arrange a meeting with the Canadian Prime Minister to find a better way to make the country more money.\n(2)Launch a campaign that slanders the Canadian government for going against their word.\n(3)Attack the company that is building the pipleine in Canada and try to shut them down.", 1, 3);
-        swtich(choice3) {
+        switch(choice3) {
             case 1:
                 System.out.println("You have chosen to meet with the Canadian PM. This meeting is successful and he finds a different way to increase his country's GDP.\n You have reduced the emissions. But have lost money on the time spent with the Canadian government.");
                 p.addMoney(-50);
@@ -497,7 +522,7 @@ public class Main {
         p.getProgress(isEnd);
 
         int choice1 = promptUser("", 1,3);
-        swtich(choice1) {
+        switch(choice1) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -518,7 +543,7 @@ public class Main {
                 break;
         }
         int choice2 = promptUser("", 1,3);
-        swtich(choice2) {
+        switch(choice2) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -539,7 +564,7 @@ public class Main {
                 break;
         }
         int choice3 = promptUser("", 1,3);
-        swtich(choice3) {
+        switch(choice3) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -578,7 +603,7 @@ public class Main {
         p.getProgress(isEnd);
 
         int choice1 = promptUser("", 1,3);
-        swtich(choice1) {
+        switch(choice1) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -599,7 +624,7 @@ public class Main {
                 break;
         }
         int choice2 = promptUser("", 1,3);
-        swtich(choice2) {
+        switch(choice2) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -620,7 +645,7 @@ public class Main {
                 break;
         }
         int choice3 = promptUser("", 1,3);
-        swtich(choice3) {
+        switch(choice3) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -658,7 +683,7 @@ public class Main {
         p.getProgress(isEnd);
 
         int choice1 = promptUser("", 1,3);
-        swtich(choice1) {
+        switch(choice1) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -679,7 +704,7 @@ public class Main {
                 break;
         }
         int choice2 = promptUser("", 1,3);
-        swtich(choice2) {
+        switch(choice2) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -700,7 +725,7 @@ public class Main {
                 break;
         }
         int choice3 = promptUser("", 1,3);
-        swtich(choice3) {
+        switch(choice3) {
             case 1:
                 System.out.println("");
                 p.addMoney();
@@ -750,7 +775,7 @@ public class Main {
 
         System.out.println(wrapStars("THE END"));
     }
-
+*/
     public static int promptUser(String message, int firstOption, int lastOption) {
         System.out.println(message);
         int input = -1;
