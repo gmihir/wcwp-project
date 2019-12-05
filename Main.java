@@ -253,7 +253,30 @@ public class Main {
                 break;
         }
 
-        isEnd = true;
+        System.out.println("\nA whistleblower has released internal documents from Shell and Exxon-Mobil that acknowledge global warming will be a result of their products. Your response?");
+
+        int choice3 = promptUser("(1) Punish the companies and force them to develop eco-friendly products\n(2) Release the documents to the media\n(3) Fine the companies but let them continue",1,3);
+
+        switch(choice3) {
+            case 1:
+                System.out.println("You have chosen to force the companies to develop environmentally responsible products. This temporarily hurts industry but contributes to reducing climate change");
+                p.addMoney(-60);
+                p.addCO2(10);
+                p.addTemp(-.05);
+                p.addFood(40);
+                break;
+            case 2:
+                System.out.println("You have chosen to release the internal documents to the media. The corporations are able to control the narrative and mitigate any economic harm to their business.");
+                p.addCO2(40);
+                p.addTemp(0.05);
+                break;
+            case 3:
+                System.out.println("You have chosen to fine the companies and let them continue. This does nothing to solve address the issue and CO2 emissions and artificial warming continue to increase.\n");
+                p.addCO2(50);
+                p.addTemp(0.1);
+                break;
+        }
+
         p.getProgress(isEnd);
         p.setLevel(3);
 
