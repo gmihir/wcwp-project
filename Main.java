@@ -445,7 +445,7 @@ public class Main {
 
         scan.nextLine();
     }
-
+    */
     public static void LevelFive(Player p) {
         //Rohil - 2010
         Scanner scan = new Scanner(System.in);
@@ -544,67 +544,74 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        int choice1 = promptUser("", 1,3);
+        System.out.println("Electric Vehicle sales are down, due in large to battery range problems.");
+        int choice1 = promptUser("(1)Give EV companies more government compensation.\n(2) Invest in battery technology to help EV companies keep selling\n(3)Rely on companies to find environmentally friendly alternatives to electric vehicles.", 1,3);
         switch(choice1) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to give EV companies companies more compensation. This will decrease GDP but will overall decrease emissions.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(-20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to invest more in battery technology. This has caused your GDP to significantly decrease, but reduces emissions greatly, as more people buy EVs");
+                p.addMoney(-75);
+                p.addTemp(0.05);
+                p.addCO2(-40);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to rely on the companies to find their own solutions. This method is very inefficient as the comapnies do not have enough funding.");
+                p.addMoney(25);
+                p.addTemp(0.1);
+                p.addCO2(15);
                 break;
         }
-        int choice2 = promptUser("", 1,3);
+
+        System.out.println("Due to global warming, temperatures are up and a town on the shore of the island is threatened to be flooded.");
+
+        int choice2 = promptUser("(1)Invest in new infastructure to try to prepare for possible floods.\n(2)Invest in disaster relief to prepare for upcoming floods.\n(3)Try to raise attention for climate change by pointing out the horrific efforts of the floods", 1,3);
         switch(choice2) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to invest in new infastructure. This has no effect on emissions, and lowers the money.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(10);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to invest in disaster relief to prepare for the incoming floods. This decreases GDP significantly and does nothing to reduce emissions.");
+                p.addMoney(-75);
+                p.addTemp(0.05);
+                p.addCO2(10);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to try to raise attention about climate change through the harmful effects of this flood. This will reduce GDP greatly and will do nothing to change emissions.");
+                p.addMoney(-100);
+                p.addTemp(0.05);
+                p.addCO2(10);
                 break;
         }
-        int choice3 = promptUser("", 1,3);
+
+        System.out.println("Due to global warming, drier areas of the islands are experiencing more wildfires than before.");
+
+        int choice3 = promptUser("(1)Invest more money into the fire department so they can have more resources to combat the fires\n(2)Invest in fire preparation to be better equipped\n(3)Place regulations on companies to prevent them from emitting more CO2", 1,3);
         switch(choice3) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to invest more money into the fire department. This lowers GDP but causes you to become more popular.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to be more prepared for fires. This lowers GDP, and does not change emissiosn by much.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(20);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to place regulations on companies to prevent them from emitting more CO2. This decreases GDP, but emissions decrease.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(20);
                 break;
         }
 
@@ -625,7 +632,7 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        int choice1 = promptUser("", 1,3);
+        int choice1 = promptUser(" ", 1,3);
         switch(choice1) {
             case 1:
                 System.out.println("");
