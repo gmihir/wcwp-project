@@ -632,25 +632,29 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        int choice1 = promptUser(" ", 1,3);
+        System.out.println("Technology continues to grow, and with it, the probability of the technology failing grows as well.");
+
+        System.out.println("Toyota's hydrogen plant, which supplies all of the hydrogen for their hydrogren powered cars has their 2nd explosion in the past two years, causing toyota to consider shutting down their hydrogen plants and the manufacturing of the car.");
+
+        int choice1 = promptUser("(1)Invest in technology to help Toyota make their plants safer.\n(2)Compensate Toyota for part of the damages, so that they can continue to produce clean air vehicles.\n(3)Allow Toyota to shut down their plant.\n", 1,3);
         switch(choice1) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to invest in the technology to help Toyota create safer plants. This reduces your GDP temporarily, but decreases emissions and slows global warming.");
+                p.addMoney(-50);
+                p.addTemp(0.03);
+                p.addCO2(-30);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to compensate Toyota for part of the damages, so that their plants can continue to stay open. This reduces GDP, but decreases emissions slightly.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(-20);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to allow Toyota to shut down its hydrogen plants. This increases GDP, but greatly raises emissions and temperature.");
+                p.addMoney(100);
+                p.addTemp(0.15);
+                p.addCO2(50);
                 break;
         }
         int choice2 = promptUser("", 1,3);
