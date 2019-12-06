@@ -10,14 +10,9 @@ public class Main {
         Player user= new Player(scan.nextLine());
         Introduction(user);
         LevelOne(user);
-<<<<<<< HEAD
-                //LevelTwo(user);
-                //LevelThree(user);
-                =======
         LevelTwo(user);
         LevelThree(user);
->>>>>>> 5a5edcab9d98f0ac9d6ab5c497aab7562c31bd8f
-        //LevelFour(user);
+        LevelFour(user);
         // LevelFive(user);
         //LevelSix(user);
         //LevelSeven(user);
@@ -200,7 +195,7 @@ public class Main {
     public static void LevelTwo(Player p) {
         //Mihir - 1980
         Scanner scan = new Scanner(System.in);
-        System.out.println("\n\n\n" + Main.wrapHash("LEVEL TWO - 1980"));
+        System.out.println("\n" + Main.wrapHash("LEVEL TWO - 1980"));
         boolean isEnd = false;
         p.getProgress(isEnd);
 
@@ -277,7 +272,7 @@ public class Main {
                 p.addFood(20);
                 break;
             case 3:
-                System.out.println("You have chosen to fine the companies and let them continue. This does nothing to solve address the issue and CO2 emissions and artificial warming continue to increase.\n");
+                System.out.println("You have chosen to fine the companies and let them continue. This does nothing to solve address the issue and CO2 emissions and artificial warming continue to increase.");
                 p.addCO2(50);
                 p.addTemp(0.1);
                 p.addFood(30);
@@ -352,7 +347,7 @@ public class Main {
                 break;
         }
 
-        System.out.println("OPEC is throttling gas prices to maintain their competitive hold and to also make more money. How do you handle this...");
+        System.out.println("\nOPEC is throttling gas prices to maintain their competitive hold and to also make more money. How do you handle this...");
         int choice3 = promptUser("(1)Implement policy to force car manufacturers to increase fuel efficiency\n(2)Promote electric vehicles to reduce foreign dependency and boost industry\n(3)Reduce civilian access to gas", 1,3);
         switch(choice3) {
             case 1:
@@ -383,7 +378,7 @@ public class Main {
 
         scan.nextLine();
     }
-/*
+
     public static void LevelFour(Player p) {
         //Mihir - 2000
         Scanner scan = new Scanner(System.in);
@@ -391,28 +386,303 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        int choice1 = promptUser("", 1,3);
+
+        System.out.println("\nThe growing demands of Triton require new mechanisms of energy production. What do you do to meet the new needs of your people?");
+        int choice1 = promptUser("(1) Build more oil drills subsidized by private industry\n(2) Focus on finding external sources of energy like importing more oil from OPEC\n(3)Use it as an opportunity to transition towards renewables, although there is significant initial expense", 1,3);
         switch(choice1) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to build more oil drills. This is the cheapest option as companies invest in the venture, but worsens the sustainability of Triton.");
+                p.addMoney(2000);
+                p.addTemp(0.2);
+                p.addCO2(100);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to increase foreign energy dependency. This is poor policy as Triton is now more vulnerable to external influence and since the climate crisis is not being addressed.");
+                p.addMoney(-800);
+                p.addTemp(0.1);
+                p.addCO2(60);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have seized the opportunity and invested in renewables. This costs money but cuts future CO2 emissions and mitigates the climate risks of future expansion.");
+                p.addMoney(-400);
+                p.addTemp(0.05);
+                p.addCO2(30);
                 break;
         }
-        int choice2 = promptUser("", 1,3);
+
+        System.out.println("\nPowerful companies want to expand their operations deep into the forests of Triton. How do you respond...");
+        int choice2 = promptUser("(1) Declare the forest as a protected area\n(2) Sell them the land and let them expand into the forests\n(3) Encourage a grassroots movement among your people to protect the forests", 1,3);
+        switch(choice2) {
+            case 1:
+                System.out.println("You have chosen to declare the forest as a protected area. You miss out on some money from selling the land, but by preventing deforestation you keep the carbon in the trees and also keep your food supply.");
+                p.addMoney(-300);
+                p.addTemp(0.05);
+                p.addCO2(50);
+                p.addFood(40);
+                break;
+            case 2:
+                System.out.println("You have chosen to sell the land to the corporations. This damages the local ecosystem and hurts both your food production and increases CO2 emissions as the carbon in the trees is now in the atmosphere. ");
+                p.addMoney(2000);
+                p.addTemp(0.2);
+                p.addCO2(120);
+                p.addFood(-50);
+                break;
+            case 3:
+                System.out.println("You have chosen to encourage a movement among your people to stop the corporations. This is ineffective since the change is not happening at a high enough level, and the corporations end up expanding.");
+                p.addMoney(400);
+                p.addTemp(0.1);
+                p.addCO2(80);
+                p.addFood(40);
+                break;
+        }
+
+        System.out.println("\nA study has shown eating meat (especially beef) contributes to greenhouse gas emissions, what do you do...");
+        int choice3 = promptUser("(1) Let consumer demand for environmentally responsible food regulate the market\n(2) Implement a “beef tax” incentivizing consumers to eat other sources of protein\n(3) Do nothing", 1,3);
+        switch(choice3) {
+            case 1:
+                System.out.println("You have chosen to trust the consumer and hope they demand environmentally responsible food. This doesn't work as most consumers are drawn in by the low prices of beef, leaving the problem as is.");
+                p.addMoney(60);
+                p.addTemp(0.05);
+                p.addCO2(80);
+                p.addFood(20);
+                break;
+            case 2:
+                System.out.println("You have chosen to implement a beef tax. This is effective in incentivizing both companies and consumers to eating other proteins and helps slow the rise of temperature.");
+                p.addMoney(30);
+                p.addTemp(-0.05);
+                p.addCO2(40);
+                p.addFood(30);
+                break;
+            case 3:
+                System.out.println("You have chosen to do nothing about the issue and maintain the status quo while electing to endure the consequences.");
+                p.addMoney(10);
+                p.addTemp(0.1);
+                p.addCO2(60);
+                p.addFood(-20);
+                break;
+        }
+
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(5);
+
+        System.out.println("\nPlease enter any key below to enter level five.");
+
+        scan.nextLine();
+    }
+/*
+    public static void LevelFive(Player p) {
+        //Rohil - 2010
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL FIVE - 2010"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        System.out.println("With the growing technology, companies on Triton start looking for ways to make money faster..." + "\n\n");
+
+        System.out.println("Due to the onset of fast fashion companies, people are buying significantly more clothes than they would otherwise, leading to the burning of clothes and releasing CO2 into the environment.");
+
+        int choice1 = promptUser("(1)Launch a campaign to educate the public about what is happening here, encouraging them to buy fewer clothes.\n(2)Invest in new research to find better ways to reuse old clothes or dispose without hurting the environment.\n(3)Let people buy fewer clothes on their own, and hope the problem gets resolved on its own.",1,3);
+        switch(choice1) {
+            case 1:
+                System.out.println("You have chose to launch a campaign to attempt to educate the public about these bad business practices. This approach has a small effect on a portion of the public due to your credibility.");
+                p.addMoney(-50);
+                //p.addEnergy(20);
+                p.addTemp(0.1);
+                p.addCO2(-5);
+                break;
+            case 2:
+                System.out.println("You have chosen to invest in research. This reduces GDP in the short run, but greatly helps with CO2 emissions.");
+                p.addMoney(-50);
+                //p.addEnergy(20);
+                p.addCO2(-30);
+                p.addTemp(0.05);
+                break;
+            case 3:
+                System.out.println("You have chosen to take no action against these companies. Your GDP benefits, but CO2 emissions and temperature are affected greatly");
+                p.addMoney(25);
+                p.addTemp(0.2);
+                p.addCO2(40);
+                break;
+        }
+
+        System.out.println("You find out that cruise companies are heavily polluting the water that they sail in due to the rules of Maritime law.");
+
+        int choice2 = promptUser("(1)Collaborate with other nations to create a good system for regulating how much waste cruise companies can release into the environment.\n(2)Encourage customers to think twice about the harmful things that the companies are doing to the ocean.\n(3)Try to create other methods of vacations that people would enjoy, but are less harmful to the cruises.", 1, 3);
+        switch(choice2)
+        {
+            case 1:
+                System.out.println("You have chosen to collaborate with other countries in an attempt to regulate the pollution of the companies. This will greatly help reduce emissions, but will decrease GDP");
+                p.addMoney(-50);
+                p.addCO2(-20);
+                p.addTemp(0.05);
+                break;
+            case 2:
+                System.out.println("You have chose to launch a campaign telling customers about the harmful effects of cruises. This is somewhat effective in lowering emissions, but lowers GDP as a result.");
+                p.addTemp(0.05);
+                p.addMoney(-50);
+                p.addCO2(-10);
+                break;
+            case 3:
+                System.out.println("You have chosen to invest in looking for a more environmentally friendly alternative to cruises. This lowers GDP and does not have a very large effect on CO2 emissions as cruises are still as popular as ever");
+                p.addTemp(0.1);
+                p.addMoney(-50);
+                break;
+        }
+
+        System.out.println("The Prime Minister of Canada approves a new oil pipeline to be built after making climate change one of his biggest campaign issues.");
+
+        int choice3 = promptUser("(1)Arrange a meeting with the Canadian Prime Minister to find a better way to make the country more money.\n(2)Launch a campaign that slanders the Canadian government for going against their word.\n(3)Attack the company that is building the pipleine in Canada and try to shut them down.", 1, 3);
+        switch(choice3) {
+            case 1:
+                System.out.println("You have chosen to meet with the Canadian PM. This meeting is successful and he finds a different way to increase his country's GDP.\n You have reduced the emissions. But have lost money on the time spent with the Canadian government.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(-20);
+                break;
+            case 2:
+                System.out.println("You have chosen to slander the Canadian PM. This lowers GDP and does not help, as the Canadian citizens are very prideful in their government.");
+                p.addMoney(-100);
+                p.addTemp(0.1);
+                p.addCO2(20);
+                break;
+            case 3:
+                System.out.println("You have chosen to attack the company. This lowers your GDP and does not deter the company from doing anything.");
+                p.addMoney(-50);
+                p.addTemp(0.1);
+                p.addCO2(20);
+                break;
+        }
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(6);
+
+        System.out.println("\nPlease enter any key below to enter level six.");
+
+        scan.nextLine();
+    }
+
+    public static void LevelSix(Player p) {
+        //Rohil - 2020
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL SIX - 2020"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        System.out.println("Electric Vehicle sales are down, due in large to battery range problems.");
+        int choice1 = promptUser("(1)Give EV companies more government compensation.\n(2) Invest in battery technology to help EV companies keep selling\n(3)Rely on companies to find environmentally friendly alternatives to electric vehicles.", 1,3);
+        switch(choice1) {
+            case 1:
+                System.out.println("You have chosen to give EV companies companies more compensation. This will decrease GDP but will overall decrease emissions.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(-20);
+                break;
+            case 2:
+                System.out.println("You have chosen to invest more in battery technology. This has caused your GDP to significantly decrease, but reduces emissions greatly, as more people buy EVs");
+                p.addMoney(-75);
+                p.addTemp(0.05);
+                p.addCO2(-40);
+                break;
+            case 3:
+                System.out.println("You have chosen to rely on the companies to find their own solutions. This method is very inefficient as the comapnies do not have enough funding.");
+                p.addMoney(25);
+                p.addTemp(0.1);
+                p.addCO2(15);
+                break;
+        }
+
+        System.out.println("Due to global warming, temperatures are up and a town on the shore of the island is threatened to be flooded.");
+
+        int choice2 = promptUser("(1)Invest in new infastructure to try to prepare for possible floods.\n(2)Invest in disaster relief to prepare for upcoming floods.\n(3)Try to raise attention for climate change by pointing out the horrific efforts of the floods", 1,3);
+        switch(choice2) {
+            case 1:
+                System.out.println("You have chosen to invest in new infastructure. This has no effect on emissions, and lowers the money.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(10);
+                break;
+            case 2:
+                System.out.println("You have chosen to invest in disaster relief to prepare for the incoming floods. This decreases GDP significantly and does nothing to reduce emissions.");
+                p.addMoney(-75);
+                p.addTemp(0.05);
+                p.addCO2(10);
+                break;
+            case 3:
+                System.out.println("You have chosen to try to raise attention about climate change through the harmful effects of this flood. This will reduce GDP greatly and will do nothing to change emissions.");
+                p.addMoney(-100);
+                p.addTemp(0.05);
+                p.addCO2(10);
+                break;
+        }
+
+        System.out.println("Due to global warming, drier areas of the islands are experiencing more wildfires than before.");
+
+        int choice3 = promptUser("(1)Invest more money into the fire department so they can have more resources to combat the fires\n(2)Invest in fire preparation to be better equipped\n(3)Place regulations on companies to prevent them from emitting more CO2", 1,3);
+        switch(choice3) {
+            case 1:
+                System.out.println("You have chosen to invest more money into the fire department. This lowers GDP but causes you to become more popular.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(20);
+                break;
+            case 2:
+                System.out.println("You have chosen to be more prepared for fires. This lowers GDP, and does not change emissions by much.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(20);
+                break;
+            case 3:
+                System.out.println("You have chosen to place regulations on companies to prevent them from emitting more CO2. This decreases GDP, but emissions decrease.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(20);
+                break;
+        }
+
+
+        isEnd = true;
+        p.getProgress(isEnd);
+        p.setLevel(7);
+
+        System.out.println("\nPlease enter any key below to enter level seven.");
+
+        scan.nextLine();
+    }
+
+    public static void LevelSeven(Player p) {
+        //Rohil - 2030
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n\n" + Main.wrapHash("LEVEL SEVEN - 2030"));
+        boolean isEnd = false;
+        p.getProgress(isEnd);
+
+        System.out.println("Technology continues to grow, and with it, the probability of the technology failing grows as well.");
+
+        System.out.println("Toyota's hydrogen plant, which supplies all of the hydrogen for their hydrogren powered cars has their 2nd explosion in the past two years, causing toyota to consider shutting down their hydrogen plants and the manufacturing of the car.");
+
+        int choice1 = promptUser("(1)Invest in technology to help Toyota make their plants safer.\n(2)Compensate Toyota for part of the damages, so that they can continue to produce clean air vehicles.\n(3)Allow Toyota to shut down their plant.\n", 1,3);
+        switch(choice1) {
+            case 1:
+                System.out.println("You have chosen to invest in the technology to help Toyota create safer plants. This reduces your GDP temporarily, but decreases emissions and slows global warming.");
+                p.addMoney(-50);
+                p.addTemp(0.03);
+                p.addCO2(-30);
+                break;
+            case 2:
+                System.out.println("You have chosen to compensate Toyota for part of the damages, so that their plants can continue to stay open. This reduces GDP, but decreases emissions slightly.");
+                p.addMoney(-50);
+                p.addTemp(0.05);
+                p.addCO2(-20);
+                break;
+            case 3:
+                System.out.println("You have chosen to allow Toyota to shut down its hydrogen plants. This increases GDP, but greatly raises emissions and temperature.");
+                p.addMoney(100);
+                p.addTemp(0.15);
+                p.addCO2(50);
+                break;
+        }
+        int choice2 = promptUser(" ", 1,3);
         switch(choice2) {
             case 1:
                 System.out.println("");
@@ -452,299 +722,6 @@ public class Main {
                 p.addMoney();
                 p.addTemp();
                 p.addCO2();
-                break;
-        }
-
-        isEnd = true;
-        p.getProgress(isEnd);
-        p.setLevel(5);
-
-        System.out.println("\nPlease enter any key below to enter level five.");
-
-        scan.nextLine();
-    }
-*/
-    public static void LevelFive(Player p) {
-        //Rohil - 2010
-        Scanner scan = new Scanner(System.in);
-        System.out.println("\n\n\n" + Main.wrapHash("LEVEL FIVE - 2010"));
-        boolean isEnd = false;
-        p.getProgress(isEnd);
-
-        System.out.println("With the growing technology, companies on Triton start looking for ways to make money faster..." + "\n\n");
-
-        System.out.println("Due to the onset of fast fashion companies, people are buying significantly more clothes than they would otherwise, leading to the burning of clothes and releasing CO2 into the environment.");
-
-        int choice1 = promptUser("(1)Launch a campaign to educate the public about what is happening here, encouraging them to buy fewer clothes.\n(2)Invest in new research to find better ways to reuse old clothes or dispose without hurting the environment.\n(3)Let people buy fewer clothes on their own, and hope the problem gets resolved on its own.",1,3);
-        switch(choice1) {
-            case 1:
-                System.out.println("You have chose to launch a campaign to attempt to educate the public about these bad business practices. This approach has a small effect on a portion of the public due to your credibility.");
-                p.addMoney(-50);
-                p.addFood(20);
-                p.addTemp(0.1);
-                p.addCO2(-5);
-                break;
-            case 2:
-                System.out.println("You have chosen to invest in research. This reduces GDP in the short run, but greatly helps with CO2 emissions.");
-                p.addMoney(-50);
-                p.addFood(20);
-                p.addCO2(-30);
-                p.addTemp(0.05);
-                break;
-            case 3:
-                System.out.println("You have chosen to take no action against these companies. Your GDP benefits, but CO2 emissions and temperature are affected greatly");
-                p.addMoney(25);
-                p.addTemp(0.2);
-                p.addCO2(40);
-                p.addFood(20);
-                break;
-        }
-
-        System.out.println("You find out that cruise companies are heavily polluting the water that they sail in due to the rules of Maritime law.");
-
-        int choice2 = promptUser("(1)Collaborate with other nations to create a good system for regulating how much waste cruise companies can release into the environment.\n(2)Encourage customers to think twice about the harmful things that the companies are doing to the ocean.\n(3)Try to create other methods of vacations that people would enjoy, but are less harmful to the cruises.", 1, 3);
-        switch(choice2)
-        {
-            case 1:
-                System.out.println("You have chosen to collaborate with other countries in an attempt to regulate the pollution of the companies. This will greatly help reduce emissions, but will decrease GDP");
-                p.addMoney(-50);
-                p.addCO2(-20);
-                p.addTemp(0.05);
-                p.addFood(20);
-                break;
-            case 2:
-                System.out.println("You have chose to launch a campaign telling customers about the harmful effects of cruises. This is somewhat effective in lowering emissions, but lowers GDP as a result.");
-                p.addTemp(0.05);
-                p.addMoney(-50);
-                p.addCO2(-10);
-                p.addFood(20);
-                break;
-            case 3:
-                System.out.println("You have chosen to invest in looking for a more environmentally friendly alternative to cruises. This lowers GDP and does not have a very large effect on CO2 emissions as cruises are still as popular as ever");
-                p.addTemp(0.1);
-                p.addMoney(-50);
-                p.addFood(20);
-                p.addCO2(30);
-                break;
-        }
-
-        System.out.println("The Prime Minister of Canada approves a new oil pipeline to be built after making climate change one of his biggest campaign issues.");
-
-        int choice3 = promptUser("(1)Arrange a meeting with the Canadian Prime Minister to find a better way to make the country more money.\n(2)Launch a campaign that slanders the Canadian government for going against their word.\n(3)Attack the company that is building the pipleine in Canada and try to shut them down.", 1, 3);
-        switch(choice3) {
-            case 1:
-                System.out.println("You have chosen to meet with the Canadian PM. This meeting is successful and he finds a different way to increase his country's GDP.\n You have reduced the emissions. But have lost money on the time spent with the Canadian government.");
-                p.addMoney(-50);
-                p.addTemp(0.05);
-                p.addCO2(-20);
-                p.addFood(20);
-                break;
-            case 2:
-                System.out.println("You have chosen to slander the Canadian PM. This lowers GDP and does not help, as the Canadian citizens are very prideful in their government.");
-                p.addMoney(-100);
-                p.addTemp(0.1);
-                p.addCO2(20);
-                p.addFood(20);
-                break;
-            case 3:
-                System.out.println("You have chosen to attack the company. This lowers your GDP and does not deter the company from doing anything.");
-                p.addMoney(-50);
-                p.addTemp(0.1);
-                p.addCO2(20);
-                p.addFood(20);
-                break;
-        }
-        isEnd = true;
-        p.getProgress(isEnd);
-        p.setLevel(6);
-
-        System.out.println("\nPlease enter any key below to enter level six.");
-
-        scan.nextLine();
-    }
-
-    public static void LevelSix(Player p) {
-        //Rohil - 2020
-        Scanner scan = new Scanner(System.in);
-        System.out.println("\n\n\n" + Main.wrapHash("LEVEL SIX - 2020"));
-        boolean isEnd = false;
-        p.getProgress(isEnd);
-
-        System.out.println("Electric Vehicle sales are down, due in large to battery range problems.");
-        int choice1 = promptUser("(1)Give EV companies more government compensation.\n(2) Invest in battery technology to help EV companies keep selling\n(3)Rely on companies to find environmentally friendly alternatives to electric vehicles.", 1,3);
-        switch(choice1) {
-            case 1:
-                System.out.println("You have chosen to give EV companies companies more compensation. This will decrease GDP but will overall decrease emissions.");
-                p.addMoney(-50);
-                p.addTemp(0.05);
-                p.addCO2(-20);
-                p.addFood(20);
-                break;
-            case 2:
-                System.out.println("You have chosen to invest more in battery technology. This has caused your GDP to significantly decrease, but reduces emissions greatly, as more people buy EVs");
-                p.addMoney(-75);
-                p.addTemp(0.05);
-                p.addCO2(-40);
-                p.addFood(20);
-                break;
-            case 3:
-                System.out.println("You have chosen to rely on the companies to find their own solutions. This method is very inefficient as the comapnies do not have enough funding.");
-                p.addMoney(25);
-                p.addTemp(0.1);
-                p.addCO2(15);
-                p.addFood(20);
-                break;
-        }
-
-        System.out.println("Due to global warming, temperatures are up and a town on the shore of the island is threatened to be flooded.");
-
-        int choice2 = promptUser("(1)Invest in new infastructure to try to prepare for possible floods.\n(2)Invest in disaster relief to prepare for upcoming floods.\n(3)Try to raise attention for climate change by pointing out the horrific efforts of the floods", 1,3);
-        switch(choice2) {
-            case 1:
-                System.out.println("You have chosen to invest in new infastructure. This has no effect on emissions, and lowers the money.");
-                p.addMoney(-50);
-                p.addTemp(0.05);
-                p.addCO2(10);
-                p.addFood(20);
-                break;
-            case 2:
-                System.out.println("You have chosen to invest in disaster relief to prepare for the incoming floods. This decreases GDP significantly and does nothing to reduce emissions.");
-                p.addMoney(-75);
-                p.addTemp(0.05);
-                p.addCO2(10);
-                p.addFood(20);
-                break;
-            case 3:
-                System.out.println("You have chosen to try to raise attention about climate change through the harmful effects of this flood. This will reduce GDP greatly and will do nothing to change emissions.");
-                p.addMoney(-100);
-                p.addTemp(0.05);
-                p.addCO2(10);
-                p.addFood(20);
-                break;
-        }
-
-        System.out.println("Due to global warming, drier areas of the islands are experiencing more wildfires than before.");
-
-        int choice3 = promptUser("(1)Invest more money into the fire department so they can have more resources to combat the fires\n(2)Invest in fire preparation to be better equipped\n(3)Place regulations on companies to prevent them from emitting more CO2", 1,3);
-        switch(choice3) {
-            case 1:
-                System.out.println("You have chosen to invest more money into the fire department. This lowers GDP but causes you to become more popular.");
-                p.addMoney(-50);
-                p.addTemp(0.05);
-                p.addCO2(20);
-                p.addFood(20);
-                break;
-            case 2:
-                System.out.println("You have chosen to be more prepared for fires. This lowers GDP, and does not change emissions by much.");
-                p.addMoney(-50);
-                p.addTemp(0.05);
-                p.addCO2(20);
-                p.addFood(20);
-                break;
-            case 3:
-                System.out.println("You have chosen to place regulations on companies to prevent them from emitting more CO2. This decreases GDP, but emissions decrease.");
-                p.addMoney(-50);
-                p.addTemp(0.05);
-                p.addCO2(20);
-                p.addFood(20);
-                break;
-        }
-
-
-        isEnd = true;
-        p.getProgress(isEnd);
-        p.setLevel(7);
-
-        System.out.println("\nPlease enter any key below to enter level seven.");
-
-        scan.nextLine();
-    }
-
-    public static void LevelSeven(Player p) {
-        //Rohil - 2030
-        Scanner scan = new Scanner(System.in);
-        System.out.println("\n\n\n" + Main.wrapHash("LEVEL SEVEN - 2030"));
-        boolean isEnd = false;
-        p.getProgress(isEnd);
-
-        System.out.println("Technology continues to grow, and with it, the probability of the technology failing grows as well.");
-
-        System.out.println("Toyota's hydrogen plant, which supplies all of the hydrogen for their hydrogren powered cars has their 2nd explosion in the past two years, causing toyota to consider shutting down their hydrogen plants and the manufacturing of the car.");
-
-        int choice1 = promptUser("(1)Invest in technology to help Toyota make their plants safer.\n(2)Compensate Toyota for part of the damages, so that they can continue to produce clean air vehicles.\n(3)Allow Toyota to shut down their plant.\n", 1,3);
-        switch(choice1) {
-            case 1:
-                System.out.println("You have chosen to invest in the technology to help Toyota create safer plants. This reduces your GDP temporarily, but decreases emissions and slows global warming.");
-                p.addMoney(-50);
-                p.addTemp(0.03);
-                p.addCO2(-30);
-                p.addFood(20);
-                break;
-            case 2:
-                System.out.println("You have chosen to compensate Toyota for part of the damages, so that their plants can continue to stay open. This reduces GDP, but decreases emissions slightly.");
-                p.addMoney(-50);
-                p.addTemp(0.05);
-                p.addCO2(-20);
-                p.addFood(20);
-                break;
-            case 3:
-                System.out.println("You have chosen to allow Toyota to shut down its hydrogen plants. This increases GDP, but greatly raises emissions and temperature.");
-                p.addMoney(100);
-                p.addTemp(0.15);
-                p.addCO2(50);
-                p.addFood(20);
-                break;
-        }
-
-        System.out.println("The province of Marshall has decided to completely ban the use of gasoline cars. The police are able to arrest anyone they see driving a gasoline car.")
-        int choice2 = promptUser("(1)Offer people under a certain income some sort of compensation to make the switch.\n(2)Work to change the law so that gasoline cars stop being sold, eventually leading to all vehicles being clean air.\n(3)Completely ignore the situation in Marshall and allow them to find a solution independently.", 1,3);
-        switch(choice2) {
-            case 1:
-                System.out.println("You have chosen to offer certain people compensation to help make the switch easier. This reduces GDP significantly, but also reduces emissions significantly.");
-                p.addMoney(-75);
-                p.addTemp(0.005);
-                p.addCO2(-70);
-                p.addFood(20);
-                break;
-            case 2:
-                System.out.println("You have chosen to work with the province to change the law and slowly decrease the gasoline cars. This does not change GDP, and slowly reduces emissions.");
-                p.addMoney(10);
-                p.addTemp(0.01);
-                p.addCO2(-30);
-                p.addFood(20);
-                break;
-            case 3:
-                System.out.println("You have chosen to completely ignore the situation. This causes mass riots, and due to it, the Marshall providence needs money to repair everything. Emissions are also not affected much.");
-                p.addMoney(-30);
-                p.addTemp(0.1);
-                p.addCO2(20);
-                p.addFood(20);
-                break;
-        }
-
-        System.out.println("A scientist comes out with a new theory about biofuels that could lead to them replacing fossil fuels.");
-        int choice3 = promptUser("(1)Give the scientist money so that they can further research into this theory\n(2)Provide economic incentive for the scientists/company that complete the research on biofuels.\n(3)Ignore the findings of the scientist completely.", 1,3);
-        switch(choice3) {
-            case 1:
-                System.out.println("You have chosen to give the scientist money. This decreases GDP, but greatly decreases emissions, as fossil fuel usage decreases signifcantly.");
-                p.addMoney(-90);
-                p.addTemp(0.01);
-                p.addCO2(-50);
-                p.addFood(20);
-                break;
-            case 2:
-                System.out.println("You have chosen to provide some sort of recognition/award to the company that tests the theory of the scientist. This decreases GDP, and decreases emissions.");
-                p.addMoney(-60);
-                p.addTemp(0.02);
-                p.addCO2(-30);
-                p.addFood(20);
-                break;
-            case 3:
-                System.out.println("You have chosen to ignore the findings of the researcher. This option makes you some more money, but overall does nothing to combat emissions.");
-                p.addMoney(20);
-                p.addTemp(0.1);
-                p.addCO2(30);
-                p.addFood(20);
                 break;
         }
 
@@ -857,11 +834,8 @@ public class Main {
 
         System.out.println(wrapStars("THE END"));
     }
-<<<<<<< HEAD
- */
-         =======
 
-         >>>>>>> 5a5edcab9d98f0ac9d6ab5c497aab7562c31bd8f
+
     public static int promptUser(String message, int firstOption, int lastOption) {
         System.out.println(message);
         int input = -1;
@@ -1005,7 +979,7 @@ class Player {
         if(co2Diff > 0)
             cDiff = "+" + cDiff;
 
-        System.out.println("Money: " + money + "(" + mDiff + ")" + "\nEnergy: " + energy + "(" + eDiff + ")" +  "\nFood: " + food + "(" + fDiff + ")" +  "\nCO2 Emissions: " + co2 + "(" + cDiff + ")");
+        System.out.println("\nMoney: " + money + "(" + mDiff + ")" + "\nEnergy: " + energy + "(" + eDiff + ")" +  "\nFood: " + food + "(" + fDiff + ")" +  "\nCO2 Emissions: " + co2 + "(" + cDiff + ")");
 
 
         temp = Math.round((temp) * 100) / 100.0; // to deal with floating point errors
