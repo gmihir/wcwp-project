@@ -196,7 +196,7 @@ public class Main {
     }
 
 
-    /*
+
     public static void LevelTwo(Player p) {
         //Mihir - 1980
         Scanner scan = new Scanner(System.in);
@@ -463,7 +463,7 @@ public class Main {
 
         scan.nextLine();
     }
-
+*/
     public static void LevelFive(Player p) {
         //Rohil - 2010
         Scanner scan = new Scanner(System.in);
@@ -480,14 +480,14 @@ public class Main {
             case 1:
                 System.out.println("You have chose to launch a campaign to attempt to educate the public about these bad business practices. This approach has a small effect on a portion of the public due to your credibility.");
                 p.addMoney(-50);
-                //p.addEnergy(20);
+                p.addFood(20);
                 p.addTemp(0.1);
                 p.addCO2(-5);
                 break;
             case 2:
                 System.out.println("You have chosen to invest in research. This reduces GDP in the short run, but greatly helps with CO2 emissions.");
                 p.addMoney(-50);
-                //p.addEnergy(20);
+                p.addFood(20);
                 p.addCO2(-30);
                 p.addTemp(0.05);
                 break;
@@ -496,6 +496,7 @@ public class Main {
                 p.addMoney(25);
                 p.addTemp(0.2);
                 p.addCO2(40);
+                p.addFood(20);
                 break;
         }
 
@@ -509,17 +510,21 @@ public class Main {
                 p.addMoney(-50);
                 p.addCO2(-20);
                 p.addTemp(0.05);
+                p.addFood(20);
                 break;
             case 2:
                 System.out.println("You have chose to launch a campaign telling customers about the harmful effects of cruises. This is somewhat effective in lowering emissions, but lowers GDP as a result.");
                 p.addTemp(0.05);
                 p.addMoney(-50);
                 p.addCO2(-10);
+                p.addFood(20);
                 break;
             case 3:
                 System.out.println("You have chosen to invest in looking for a more environmentally friendly alternative to cruises. This lowers GDP and does not have a very large effect on CO2 emissions as cruises are still as popular as ever");
                 p.addTemp(0.1);
                 p.addMoney(-50);
+                p.addFood(20);
+                p.addCO2(30);
                 break;
         }
 
@@ -532,18 +537,21 @@ public class Main {
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(-20);
+                p.addFood(20);
                 break;
             case 2:
                 System.out.println("You have chosen to slander the Canadian PM. This lowers GDP and does not help, as the Canadian citizens are very prideful in their government.");
                 p.addMoney(-100);
                 p.addTemp(0.1);
                 p.addCO2(20);
+                p.addFood(20);
                 break;
             case 3:
                 System.out.println("You have chosen to attack the company. This lowers your GDP and does not deter the company from doing anything.");
                 p.addMoney(-50);
                 p.addTemp(0.1);
                 p.addCO2(20);
+                p.addFood(20);
                 break;
         }
         isEnd = true;
@@ -570,18 +578,21 @@ public class Main {
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(-20);
+                p.addFood(20);
                 break;
             case 2:
                 System.out.println("You have chosen to invest more in battery technology. This has caused your GDP to significantly decrease, but reduces emissions greatly, as more people buy EVs");
                 p.addMoney(-75);
                 p.addTemp(0.05);
                 p.addCO2(-40);
+                p.addFood(20);
                 break;
             case 3:
                 System.out.println("You have chosen to rely on the companies to find their own solutions. This method is very inefficient as the comapnies do not have enough funding.");
                 p.addMoney(25);
                 p.addTemp(0.1);
                 p.addCO2(15);
+                p.addFood(20);
                 break;
         }
 
@@ -594,18 +605,21 @@ public class Main {
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(10);
+                p.addFood(20);
                 break;
             case 2:
                 System.out.println("You have chosen to invest in disaster relief to prepare for the incoming floods. This decreases GDP significantly and does nothing to reduce emissions.");
                 p.addMoney(-75);
                 p.addTemp(0.05);
                 p.addCO2(10);
+                p.addFood(20);
                 break;
             case 3:
                 System.out.println("You have chosen to try to raise attention about climate change through the harmful effects of this flood. This will reduce GDP greatly and will do nothing to change emissions.");
                 p.addMoney(-100);
                 p.addTemp(0.05);
                 p.addCO2(10);
+                p.addFood(20);
                 break;
         }
 
@@ -618,18 +632,21 @@ public class Main {
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(20);
+                p.addFood(20);
                 break;
             case 2:
                 System.out.println("You have chosen to be more prepared for fires. This lowers GDP, and does not change emissions by much.");
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(20);
+                p.addFood(20);
                 break;
             case 3:
                 System.out.println("You have chosen to place regulations on companies to prevent them from emitting more CO2. This decreases GDP, but emissions decrease.");
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(20);
+                p.addFood(20);
                 break;
         }
 
@@ -661,60 +678,73 @@ public class Main {
                 p.addMoney(-50);
                 p.addTemp(0.03);
                 p.addCO2(-30);
+                p.addFood(20);
                 break;
             case 2:
                 System.out.println("You have chosen to compensate Toyota for part of the damages, so that their plants can continue to stay open. This reduces GDP, but decreases emissions slightly.");
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(-20);
+                p.addFood(20);
                 break;
             case 3:
                 System.out.println("You have chosen to allow Toyota to shut down its hydrogen plants. This increases GDP, but greatly raises emissions and temperature.");
                 p.addMoney(100);
                 p.addTemp(0.15);
                 p.addCO2(50);
+                p.addFood(20);
                 break;
         }
-        int choice2 = promptUser(" ", 1,3);
+
+        System.out.println("The province of Marshall has decided to completely ban the use of gasoline cars. The police are able to arrest anyone they see driving a gasoline car.")
+        int choice2 = promptUser("(1)Offer people under a certain income some sort of compensation to make the switch.\n(2)Work to change the law so that gasoline cars stop being sold, eventually leading to all vehicles being clean air.\n(3)Completely ignore the situation in Marshall and allow them to find a solution independently.", 1,3);
         switch(choice2) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to offer certain people compensation to help make the switch easier. This reduces GDP significantly, but also reduces emissions significantly.");
+                p.addMoney(-75);
+                p.addTemp(0.005);
+                p.addCO2(-70);
+                p.addFood(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to work with the province to change the law and slowly decrease the gasoline cars. This does not change GDP, and slowly reduces emissions.");
+                p.addMoney(10);
+                p.addTemp(0.01);
+                p.addCO2(-30);
+                p.addFood(20);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to completely ignore the situation. This causes mass riots, and due to it, the Marshall providence needs money to repair everything. Emissions are also not affected much.");
+                p.addMoney(-30);
+                p.addTemp(0.1);
+                p.addCO2(20);
+                p.addFood(20);
                 break;
         }
-        int choice3 = promptUser("", 1,3);
+
+        System.out.println("A scientist comes out with a new theory about biofuels that could lead to them replacing fossil fuels.");
+        int choice3 = promptUser("(1)Give the scientist money so that they can further research into this theory\n(2)Provide economic incentive for the scientists/company that complete the research on biofuels.\n(3)Ignore the findings of the scientist completely.", 1,3);
         switch(choice3) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to give the scientist money. This decreases GDP, but greatly decreases emissions, as fossil fuel usage decreases signifcantly.");
+                p.addMoney(-90);
+                p.addTemp(0.01);
+                p.addCO2(-50);
+                p.addFood(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to provide some sort of recognition/award to the company that tests the theory of the scientist. This decreases GDP, and decreases emissions.");
+                p.addMoney(-60);
+                p.addTemp(0.02);
+                p.addCO2(-30);
+                p.addFood(20);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to ignore the findings of the researcher. This option makes you some more money, but overall does nothing to combat emissions.");
+                p.addMoney(20);
+                p.addTemp(0.1);
+                p.addCO2(30);
+                p.addFood(20);
                 break;
         }
 
