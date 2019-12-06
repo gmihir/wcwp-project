@@ -470,7 +470,7 @@ public class Main {
 
         scan.nextLine();
     }
-/*
+
     public static void LevelFive(Player p) {
         //Rohil - 2010
         Scanner scan = new Scanner(System.in);
@@ -659,6 +659,9 @@ public class Main {
 
         System.out.println("Technology continues to grow, and with it, the probability of the technology failing grows as well.");
 
+
+        System.out.println("Technology continues to grow, and with it, the probability of the technology failing grows as well.");
+
         System.out.println("Toyota's hydrogen plant, which supplies all of the hydrogen for their hydrogren powered cars has their 2nd explosion in the past two years, causing toyota to consider shutting down their hydrogen plants and the manufacturing of the car.");
 
         int choice1 = promptUser("(1)Invest in technology to help Toyota make their plants safer.\n(2)Compensate Toyota for part of the damages, so that they can continue to produce clean air vehicles.\n(3)Allow Toyota to shut down their plant.\n", 1,3);
@@ -668,60 +671,73 @@ public class Main {
                 p.addMoney(-50);
                 p.addTemp(0.03);
                 p.addCO2(-30);
+                p.addFood(20);
                 break;
             case 2:
                 System.out.println("You have chosen to compensate Toyota for part of the damages, so that their plants can continue to stay open. This reduces GDP, but decreases emissions slightly.");
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(-20);
+                p.addFood(20);
                 break;
             case 3:
                 System.out.println("You have chosen to allow Toyota to shut down its hydrogen plants. This increases GDP, but greatly raises emissions and temperature.");
                 p.addMoney(100);
                 p.addTemp(0.15);
                 p.addCO2(50);
+                p.addFood(20);
                 break;
         }
-        int choice2 = promptUser(" ", 1,3);
+
+        System.out.println("The province of Marshall has decided to completely ban the use of gasoline cars. The police are able to arrest anyone they see driving a gasoline car.")
+        int choice2 = promptUser("(1)Offer people under a certain income some sort of compensation to make the switch.\n(2)Work to change the law so that gasoline cars stop being sold, eventually leading to all vehicles being clean air.\n(3)Completely ignore the situation in Marshall and allow them to find a solution independently.", 1,3);
         switch(choice2) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to offer certain people compensation to help make the switch easier. This reduces GDP significantly, but also reduces emissions significantly.");
+                p.addMoney(-75);
+                p.addTemp(0.005);
+                p.addCO2(-70);
+                p.addFood(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to work with the province to change the law and slowly decrease the gasoline cars. This does not change GDP, and slowly reduces emissions.");
+                p.addMoney(10);
+                p.addTemp(0.01);
+                p.addCO2(-30);
+                p.addFood(20);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to completely ignore the situation. This causes mass riots, and due to it, the Marshall providence needs money to repair everything. Emissions are also not affected much.");
+                p.addMoney(-30);
+                p.addTemp(0.1);
+                p.addCO2(20);
+                p.addFood(20);
                 break;
         }
-        int choice3 = promptUser("", 1,3);
+
+        System.out.println("A scientist comes out with a new theory about biofuels that could lead to them replacing fossil fuels.");
+        int choice3 = promptUser("(1)Give the scientist money so that they can further research into this theory\n(2)Provide economic incentive for the scientists/company that complete the research on biofuels.\n(3)Ignore the findings of the scientist completely.", 1,3);
         switch(choice3) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to give the scientist money. This decreases GDP, but greatly decreases emissions, as fossil fuel usage decreases signifcantly.");
+                p.addMoney(-90);
+                p.addTemp(0.01);
+                p.addCO2(-50);
+                p.addFood(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to provide some sort of recognition/award to the company that tests the theory of the scientist. This decreases GDP, and decreases emissions.");
+                p.addMoney(-60);
+                p.addTemp(0.02);
+                p.addCO2(-30);
+                p.addFood(20);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to ignore the findings of the researcher. This option makes you some more money, but overall does nothing to combat emissions.");
+                p.addMoney(20);
+                p.addTemp(0.1);
+                p.addCO2(30);
+                p.addFood(20);
                 break;
         }
 
