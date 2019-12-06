@@ -11,7 +11,7 @@ public class Main {
         Introduction(user);
         LevelOne(user);
         LevelTwo(user);
-        //LevelThree(user);
+        LevelThree(user);
         //LevelFour(user);
        // LevelFive(user);
         //LevelSix(user);
@@ -269,11 +269,13 @@ public class Main {
                 System.out.println("You have chosen to release the internal documents to the media. The corporations are able to control the narrative and mitigate any economic harm to their business.");
                 p.addCO2(40);
                 p.addTemp(0.05);
+                p.addFood(20);
                 break;
             case 3:
                 System.out.println("You have chosen to fine the companies and let them continue. This does nothing to solve address the issue and CO2 emissions and artificial warming continue to increase.\n");
                 p.addCO2(50);
                 p.addTemp(0.1);
+                p.addFood(30);
                 break;
         }
 
@@ -286,74 +288,84 @@ public class Main {
         scan.nextLine();
     }
 
-   /* public static void LevelThree(Player p) {
+    public static void LevelThree(Player p) {
         //Mihir - 1990
         Scanner scan = new Scanner(System.in);
         System.out.println("\n\n\n" + Main.wrapHash("LEVEL THREE - 1990"));
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        int choice1 = promptUser("", 1,3);
+        System.out.println("**ALERT** \nThe United Nations has proposed the Kyoto Protocol. It aims to reduce CFC (a greenhouse gas) and CO2 concentrations in the atmosphere\n");
+        int choice1 = promptUser("(1) Conditionally join the Kyoto Protocol\n(2) Join the Kyoto Protocol and ratify it immediately\n(3) Leave it for other countries to handle", 1,3);
         switch(choice1) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to conditionally join the Kyoto Protocol. This is a good start to promoting environmentalism both within your population and a global stage, but doesn't have a huge effect.");
+                p.addMoney(-20);
+                p.addTemp(0.05);
+                p.addCO2(20);
+                p.addFood(40);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to unconditionally join the Kyoto Protocol and ratify it immediately. Although the initial cost of CO2 reduction measures hurts GDP, it's a good long-term investment and greatly reduces global warming.");
+                p.addMoney(100);
+                p.addTemp(-0.1);
+                p.addCO2(-10);
+                p.addFood(60);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to ignore the Kyoto Protocol and leave it for other countries to handle. This preserves your financial reserves but does nothing to stop the increasing environmental effects of expansion.");
+                p.addMoney(200);
+                p.addTemp(0.2);
+                p.addCO2(100);
+                p.addFood(-30);
                 break;
         }
-        int choice2 = promptUser("", 1,3);
+
+        System.out.println("\nStudies have shown industrial use of plastics is leading to excessive marine death around the island. How do you deal with this...");
+        int choice2 = promptUser("(1) Start an awareness movement to reduce consumer usage of plastic straws and bags\n(2) Institute a “waste tax” on big companies to incentivize less waste\n(3) Ignore the study and promote domestic industry", 1,3);
         switch(choice2) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to raise customer awareness and push for less consumer use of plastic goods. This approach simply does not act on the magnitude required to solve the issue and has minimal impact.");
+                p.addMoney(20);
+                p.addTemp(0.1);
+                p.addCO2(40);
+                p.addFood(-30);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to institute a waste tax on polluting companies. Through the decade, this approach is successful in saving marine lives and has the unintended byproduct of reducing gaseous emissions as well.");
+                p.addMoney(-60);
+                p.addTemp(0.05);
+                p.addCO2(20);
+                p.addFood(-40);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to ignore the scientific study. This path leads to a continual harm of marine life and also sets a precedent for companies to act in other environmentally irresponsible ways.");
+                p.addMoney(400);
+                p.addTemp(0.2);
+                p.addCO2(100);
+                p.addFood(-30);
                 break;
         }
-        int choice3 = promptUser("", 1,3);
+
+        System.out.println("OPEC is throttling gas prices to maintain their competitive hold and to also make more money. How do you handle this...");
+        int choice3 = promptUser("(1)Implement policy to force car manufacturers to increase fuel efficiency\n(2)Promote electric vehicles to reduce foreign dependency and boost industry\n(3)Reduce civilian access to gas", 1,3);
         switch(choice3) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to implement policy promoting fuel efficiency. This decision slows down the growth of CO2 emissions considerably and actually saves money in the long run.");
+                p.addMoney(80);
+                p.addTemp(0.05);
+                p.addCO2(30);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to push for electric vehicle development. This is good policy since foreign dependence is reduced and more energy-efficient solutions are developed, this decision boosts GDP while also managing CO2 emissions responsibly.");
+                p.addMoney(200);
+                p.addCO2(10);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to reduce civilian access to gas. Although this is effective, the decision damages domestic industry and hurts overall productivity as a whole.");
+                p.addMoney(-150);
+                p.addTemp(0.05);
+                p.addCO2(50);
                 break;
         }
 
@@ -366,7 +378,7 @@ public class Main {
 
         scan.nextLine();
     }
-
+/*
     public static void LevelFour(Player p) {
         //Mihir - 2000
         Scanner scan = new Scanner(System.in);
@@ -446,7 +458,7 @@ public class Main {
 
         scan.nextLine();
     }
-    */
+
     public static void LevelFive(Player p) {
         //Rohil - 2010
         Scanner scan = new Scanner(System.in);
@@ -603,7 +615,7 @@ public class Main {
                 p.addCO2(20);
                 break;
             case 2:
-                System.out.println("You have chosen to be more prepared for fires. This lowers GDP, and does not change emissiosn by much.");
+                System.out.println("You have chosen to be more prepared for fires. This lowers GDP, and does not change emissions by much.");
                 p.addMoney(-50);
                 p.addTemp(0.05);
                 p.addCO2(20);
@@ -789,7 +801,7 @@ public class Main {
 
         scan.nextLine();
     }
-
+*/
     public static void Conclusion(Player p) {
         //Rohil
         System.out.println();
@@ -810,7 +822,7 @@ public class Main {
 
         System.out.println(wrapStars("THE END"));
     }
-*/
+
     public static int promptUser(String message, int firstOption, int lastOption) {
         System.out.println(message);
         int input = -1;
