@@ -10,14 +10,19 @@ public class Main {
         Player user= new Player(scan.nextLine());
         Introduction(user);
         LevelOne(user);
+<<<<<<< HEAD
+                //LevelTwo(user);
+                //LevelThree(user);
+                =======
         LevelTwo(user);
         LevelThree(user);
+>>>>>>> 5a5edcab9d98f0ac9d6ab5c497aab7562c31bd8f
         //LevelFour(user);
-       // LevelFive(user);
+        // LevelFive(user);
         //LevelSix(user);
         //LevelSeven(user);
         //LevelEight(user);
-      //  Conclusion(user);
+        //  Conclusion(user);
 
     }
 
@@ -191,7 +196,7 @@ public class Main {
     }
 
 
-
+    /*
     public static void LevelTwo(Player p) {
         //Mihir - 1980
         Scanner scan = new Scanner(System.in);
@@ -670,7 +675,7 @@ public class Main {
                 p.addCO2(50);
                 break;
         }
-        int choice2 = promptUser("", 1,3);
+        int choice2 = promptUser(" ", 1,3);
         switch(choice2) {
             case 1:
                 System.out.println("");
@@ -822,7 +827,11 @@ public class Main {
 
         System.out.println(wrapStars("THE END"));
     }
+<<<<<<< HEAD
+ */
+         =======
 
+         >>>>>>> 5a5edcab9d98f0ac9d6ab5c497aab7562c31bd8f
     public static int promptUser(String message, int firstOption, int lastOption) {
         System.out.println(message);
         int input = -1;
