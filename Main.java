@@ -277,6 +277,7 @@ public class Main {
                 break;
         }
 
+        isEnd = true;
         p.getProgress(isEnd);
         p.setLevel(3);
 
