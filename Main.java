@@ -13,11 +13,11 @@ public class Main {
         LevelTwo(user);
         LevelThree(user);
         LevelFour(user);
-        // LevelFive(user);
-        //LevelSix(user);
-        //LevelSeven(user);
-        //LevelEight(user);
-        //  Conclusion(user);
+        LevelFive(user);
+        LevelSix(user);
+        LevelSeven(user);
+        LevelEight(user);
+        Conclusion(user);
 
     }
 
@@ -689,7 +689,7 @@ public class Main {
                 break;
         }
 
-        System.out.println("The province of Marshall has decided to completely ban the use of gasoline cars. The police are able to arrest anyone they see driving a gasoline car.")
+        System.out.println("The province of Marshall has decided to completely ban the use of gasoline cars. The police are able to arrest anyone they see driving a gasoline car.");
         int choice2 = promptUser("(1)Offer people under a certain income some sort of compensation to make the switch.\n(2)Work to change the law so that gasoline cars stop being sold, eventually leading to all vehicles being clean air.\n(3)Completely ignore the situation in Marshall and allow them to find a solution independently.", 1,3);
         switch(choice2) {
             case 1:
@@ -757,67 +757,84 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        int choice1 = promptUser("", 1,3);
+        System.out.println("Climate change has become a global concern, and the UN wants total emissions to be down to zero by the end of this decade.");
+
+        System.out.println("The UN meets for the UN Conference in Madrid, and they want all emissions from vehicles to be 0 as soon as possible.");
+
+        int choice1 = promptUser("(1)Invest in electric car chargers, so that they are as common as gas stations are.\n(2)Pressure car manufactures to produce more electric cars instead of gasoline cars.\n(3)Give car manufacturers money to invest in better battery technology to make EVs more popular.\n", 1,3);
         switch(choice1) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to invest in more charging stations for electric cars. This makes people more motivated to buy an electric car. Your decisions decreases money temporarily, but also decreases emissions, as EV sales go up.");
+                p.addMoney(-20);
+                p.addTemp(0.01);
+                p.addCO2(-30);
+                p.addFood(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to pressure car manufacturers. This does nothing to GDP, and causes emissions to slightly decrease.");
+                p.addMoney(20);
+                p.addTemp(0.05);
+                p.addCO2(-5);
+                p.addFood(20);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to give car manufacturers more money to better the battery technology. This is slightly sucessful, and lowers your GDP, but drives down emissions");
+                p.addMoney(-50);
+                p.addTemp(0.02);
+                p.addCO2(-20);
+                p.addFood(20);
                 break;
         }
-        int choice2 = promptUser("", 1,3);
+
+        System.out.println("The UN decides that the next step to reducing emissions is within a single person's home.");
+        int choice2 = promptUser("(1)Offer rebates for people who choose to install solar panels in their homes.\n(2)Make it a requirement to have energy conserving bulbs and other items.\n(3)Fine citizens who are not using renewable energy sources in their homes.\n", 1,3);
         switch(choice2) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to offer rebates for solar panel users. This decreases GDP, but heavily decreases emissions.");
+                p.addMoney(-50);
+                p.addTemp(0.01);
+                p.addCO2(-40);
+                p.addFood(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to make energy saving a requirement in households. This doesn't impact GDP much, but also doesn't result in a huge emissions decrease.");
+                p.addMoney(10);
+                p.addTemp(0.05);
+                p.addCO2(-5);
+                p.addFood(20);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to fine citizens. This increases money, but causes some rage in citizens, making it not very effective in reducing emissions.");
+                p.addMoney(20);
+                p.addTemp(0.1);
+                p.addCO2(10);
+                p.addFood(20);
                 break;
         }
-        int choice3 = promptUser("", 1,3);
+
+        System.out.println("Finally, to completely reduce emissions to zero, garbage needs to be dealt with properly.");
+
+        int choice3 = promptUser("(1)Invest in better ways to recycle garbage.\n(2)Invest in research to dispose of garbage without burning it.\n(3)Burn all garbage in an enclosed facility so that minimal CO2 escapes.\n", 1,3);
         switch(choice3) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to invest in better recycling methods. This drives down GDP and slightly betters emissions.");
+                p.addMoney(-30);
+                p.addTemp(0.05);
+                p.addCO2(-15);
+                p.addFood(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to invest in better garbage disposal methods. This research is successful and has a significant impact on emissions.");
+                p.addMoney(-40);
+                p.addTemp(0.01);
+                p.addCO2(-30);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to burn garbage. This idea fails miserably and while GDP slightly increases, emissions increase from before.");
+                p.addMoney(15);
+                p.addTemp(0.15);
+                p.addCO2(50);
+                p.addFood(20);
                 break;
         }
 
@@ -829,7 +846,7 @@ public class Main {
 
         scan.nextLine();
     }
-*/
+
     public static void Conclusion(Player p) {
         //Rohil
         System.out.println();
@@ -839,7 +856,6 @@ public class Main {
             System.out.println("Your country's ending GDP was:$ " + p.getMoney());
             System.out.println("Your country's ending emissions were: " + p.getCo2() + " million tons");
             System.out.println("Your country's ending food supply was: " + p.getFood() + " million tons");
-            System.out.println("Your country used " +p.getEnergy() + " MegaWatt hours.");
             System.out.println("Due to your actions, the global temperature raised only by " + p.getTemp() + "degrees!");
             System.out.println("You will go down in history as an excellent leader!");
         }
