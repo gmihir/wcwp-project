@@ -10,14 +10,9 @@ public class Main {
         Player user= new Player(scan.nextLine());
         Introduction(user);
         LevelOne(user);
-<<<<<<< HEAD
-                //LevelTwo(user);
-                //LevelThree(user);
-                =======
         LevelTwo(user);
         LevelThree(user);
->>>>>>> 5a5edcab9d98f0ac9d6ab5c497aab7562c31bd8f
-        //LevelFour(user);
+        LevelFour(user);
         // LevelFive(user);
         //LevelSix(user);
         //LevelSeven(user);
@@ -196,11 +191,11 @@ public class Main {
     }
 
 
-    /*
+
     public static void LevelTwo(Player p) {
         //Mihir - 1980
         Scanner scan = new Scanner(System.in);
-        System.out.println("\n\n\n" + Main.wrapHash("LEVEL TWO - 1980"));
+        System.out.println("\n" + Main.wrapHash("LEVEL TWO - 1980"));
         boolean isEnd = false;
         p.getProgress(isEnd);
 
@@ -277,7 +272,7 @@ public class Main {
                 p.addFood(20);
                 break;
             case 3:
-                System.out.println("You have chosen to fine the companies and let them continue. This does nothing to solve address the issue and CO2 emissions and artificial warming continue to increase.\n");
+                System.out.println("You have chosen to fine the companies and let them continue. This does nothing to solve address the issue and CO2 emissions and artificial warming continue to increase.");
                 p.addCO2(50);
                 p.addTemp(0.1);
                 p.addFood(30);
@@ -352,7 +347,7 @@ public class Main {
                 break;
         }
 
-        System.out.println("OPEC is throttling gas prices to maintain their competitive hold and to also make more money. How do you handle this...");
+        System.out.println("\nOPEC is throttling gas prices to maintain their competitive hold and to also make more money. How do you handle this...");
         int choice3 = promptUser("(1)Implement policy to force car manufacturers to increase fuel efficiency\n(2)Promote electric vehicles to reduce foreign dependency and boost industry\n(3)Reduce civilian access to gas", 1,3);
         switch(choice3) {
             case 1:
@@ -383,7 +378,7 @@ public class Main {
 
         scan.nextLine();
     }
-/*
+
     public static void LevelFour(Player p) {
         //Mihir - 2000
         Scanner scan = new Scanner(System.in);
@@ -391,67 +386,79 @@ public class Main {
         boolean isEnd = false;
         p.getProgress(isEnd);
 
-        int choice1 = promptUser("", 1,3);
+
+        System.out.println("\nThe growing demands of Triton require new mechanisms of energy production. What do you do to meet the new needs of your people?");
+        int choice1 = promptUser("(1) Build more oil drills subsidized by private industry\n(2) Focus on finding external sources of energy like importing more oil from OPEC\n(3)Use it as an opportunity to transition towards renewables, although there is significant initial expense", 1,3);
         switch(choice1) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to build more oil drills. This is the cheapest option as companies invest in the venture, but worsens the sustainability of Triton.");
+                p.addMoney(2000);
+                p.addTemp(0.2);
+                p.addCO2(100);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to increase foreign energy dependency. This is poor policy as Triton is now more vulnerable to external influence and since the climate crisis is not being addressed.");
+                p.addMoney(-800);
+                p.addTemp(0.1);
+                p.addCO2(60);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have seized the opportunity and invested in renewables. This costs money but cuts future CO2 emissions and mitigates the climate risks of future expansion.");
+                p.addMoney(-400);
+                p.addTemp(0.05);
+                p.addCO2(30);
                 break;
         }
-        int choice2 = promptUser("", 1,3);
+
+        System.out.println("\nPowerful companies want to expand their operations deep into the forests of Triton. How do you respond...");
+        int choice2 = promptUser("(1) Declare the forest as a protected area\n(2) Sell them the land and let them expand into the forests\n(3) Encourage a grassroots movement among your people to protect the forests", 1,3);
         switch(choice2) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to declare the forest as a protected area. You miss out on some money from selling the land, but by preventing deforestation you keep the carbon in the trees and also keep your food supply.");
+                p.addMoney(-300);
+                p.addTemp(0.05);
+                p.addCO2(50);
+                p.addFood(40);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to sell the land to the corporations. This damages the local ecosystem and hurts both your food production and increases CO2 emissions as the carbon in the trees is now in the atmosphere. ");
+                p.addMoney(2000);
+                p.addTemp(0.2);
+                p.addCO2(120);
+                p.addFood(-50);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to encourage a movement among your people to stop the corporations. This is ineffective since the change is not happening at a high enough level, and the corporations end up expanding.");
+                p.addMoney(400);
+                p.addTemp(0.1);
+                p.addCO2(80);
+                p.addFood(40);
                 break;
         }
-        int choice3 = promptUser("", 1,3);
+
+        System.out.println("\nA study has shown eating meat (especially beef) contributes to greenhouse gas emissions, what do you do...");
+        int choice3 = promptUser("(1) Let consumer demand for environmentally responsible food regulate the market\n(2) Implement a “beef tax” incentivizing consumers to eat other sources of protein\n(3) Do nothing", 1,3);
         switch(choice3) {
             case 1:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to trust the consumer and hope they demand environmentally responsible food. This doesn't work as most consumers are drawn in by the low prices of beef, leaving the problem as is.");
+                p.addMoney(60);
+                p.addTemp(0.05);
+                p.addCO2(80);
+                p.addFood(20);
                 break;
             case 2:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to implement a beef tax. This is effective in incentivizing both companies and consumers to eating other proteins and helps slow the rise of temperature.");
+                p.addMoney(30);
+                p.addTemp(-0.05);
+                p.addCO2(40);
+                p.addFood(30);
                 break;
             case 3:
-                System.out.println("");
-                p.addMoney();
-                p.addTemp();
-                p.addCO2();
+                System.out.println("You have chosen to do nothing about the issue and maintain the status quo while electing to endure the consequences.");
+                p.addMoney(10);
+                p.addTemp(0.1);
+                p.addCO2(60);
+                p.addFood(-20);
                 break;
         }
 
@@ -463,7 +470,7 @@ public class Main {
 
         scan.nextLine();
     }
-
+/*
     public static void LevelFive(Player p) {
         //Rohil - 2010
         Scanner scan = new Scanner(System.in);
@@ -827,11 +834,8 @@ public class Main {
 
         System.out.println(wrapStars("THE END"));
     }
-<<<<<<< HEAD
- */
-         =======
 
-         >>>>>>> 5a5edcab9d98f0ac9d6ab5c497aab7562c31bd8f
+
     public static int promptUser(String message, int firstOption, int lastOption) {
         System.out.println(message);
         int input = -1;
@@ -975,7 +979,7 @@ class Player {
         if(co2Diff > 0)
             cDiff = "+" + cDiff;
 
-        System.out.println("Money: " + money + "(" + mDiff + ")" + "\nEnergy: " + energy + "(" + eDiff + ")" +  "\nFood: " + food + "(" + fDiff + ")" +  "\nCO2 Emissions: " + co2 + "(" + cDiff + ")");
+        System.out.println("\nMoney: " + money + "(" + mDiff + ")" + "\nEnergy: " + energy + "(" + eDiff + ")" +  "\nFood: " + food + "(" + fDiff + ")" +  "\nCO2 Emissions: " + co2 + "(" + cDiff + ")");
 
 
         temp = Math.round((temp) * 100) / 100.0; // to deal with floating point errors
