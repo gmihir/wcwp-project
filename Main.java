@@ -10,7 +10,7 @@ public class Main {
         Player user= new Player(scan.nextLine());
         Introduction(user);
         LevelOne(user);
-        LevelTwo(user);
+        //LevelTwo(user);
         //LevelThree(user);
         //LevelFour(user);
        // LevelFive(user);
@@ -191,7 +191,7 @@ public class Main {
     }
 
 
-
+    /*
     public static void LevelTwo(Player p) {
         //Mihir - 1980
         Scanner scan = new Scanner(System.in);
@@ -445,7 +445,7 @@ public class Main {
 
         scan.nextLine();
     }
-    */
+
     public static void LevelFive(Player p) {
         //Rohil - 2010
         Scanner scan = new Scanner(System.in);
@@ -657,7 +657,7 @@ public class Main {
                 p.addCO2(50);
                 break;
         }
-        int choice2 = promptUser("", 1,3);
+        int choice2 = promptUser(" ", 1,3);
         switch(choice2) {
             case 1:
                 System.out.println("");
@@ -809,7 +809,7 @@ public class Main {
 
         System.out.println(wrapStars("THE END"));
     }
-*/
+ */
     public static int promptUser(String message, int firstOption, int lastOption) {
         System.out.println(message);
         int input = -1;
