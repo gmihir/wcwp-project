@@ -237,12 +237,14 @@ public class Main {
                 p.addCO2(40);
                 p.addMoney(60);
                 p.addTemp(0.05);
+                p.addEnergy(40);
                 break;
             case 2:
                 System.out.println("You have chosen to promote Hansen's findings and form the Environmental Protection Agency. This is beneficial as it causes widespread change.");
                 p.addMoney(-100);
                 p.addCO2(-50);
                 p.addTemp(-0.05);
+                p.addEnergy(10);
                 break;
             case 3:
                 System.out.println("You have chosen to ignore Hansen and promote domestic industry. This bolsters GDP but greatly hurts CO2 emissions and food supplies.");
@@ -864,6 +866,8 @@ public class Main {
         }
 
 
+        System.out.println(wrapStars("REMEMBER, YOU CAN HELP MAKE THESE CHANGES IN REAL LIFE BY VOTING!"));
+        System.out.println("\n\n\n");
         System.out.println(wrapStars("THE END"));
     }
 
